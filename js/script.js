@@ -74,14 +74,28 @@ $(document).ready(function () {
         });
     }
 
+    function isMobile() {
+        return window.innerWidth <= 1024;
+    }
+
     function openMenu() {
-        $(".menu-btn").addClass("active").attr("aria-label", "메뉴 닫기");
+        $(".menu-btn")
+            .addClass("active")
+            .attr("aria-label", "메뉴 닫기")
+            .attr("aria-expanded", "true");
+
         $(".nav").addClass("active");
+        $("body").addClass("menu-open");
     }
 
     function closeMenu() {
-        $(".menu-btn").removeClass("active").attr("aria-label", "메뉴 열기");
+        $(".menu-btn")
+            .removeClass("active")
+            .attr("aria-label", "메뉴 열기")
+            .attr("aria-expanded", "false");
+
         $(".nav").removeClass("active");
+        $("body").removeClass("menu-open");
     }
 
     function toggleTopButton() {
@@ -104,26 +118,17 @@ $(document).ready(function () {
         SiteLang.setLang("en");
     });
 
-    $(".menu-btn").on("click", function (e) {
-        e.stopPropagation();
-        $(".nav").hasClass("active") ? closeMenu() : openMenu();
-    });
 
     $(".nav").on("click", function (e) {
         e.stopPropagation();
     });
 
     $(".nav li a").on("click", function () {
-       if (window.innerWidth <= 1024) {
+        if (isMobile()) {
             closeMenu();
         }
     });
 
-    $(document).on("click", function () {
-        if (window.innerWidth <= 1024) {
-            closeMenu();
-        }
-    });
 
     $(".top-btn").on("click", function () {
         $("html, body").animate({ scrollTop: 0 }, 700, "linear");
@@ -133,18 +138,13 @@ $(document).ready(function () {
         toggleTopButton();
     });
 
-    $(window).on("resize", function () {
-        if (window.innerWidth <= 1024) {
-            closeMenu();
-        }
-    });
-
     $(window).on("pageshow", function () {
         const lang = getSavedLang();
         syncLangState(lang);
         SiteLang.apply(LANG_DATA.common, ".nav [data-key]", lang);
         SiteLang.applyPage(lang);
         setActiveMenu();
+        closeMenu();
         document.documentElement.classList.add("lang-ready");
     });
 
