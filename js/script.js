@@ -114,13 +114,13 @@ $(document).ready(function () {
     });
 
     $(".nav li a").on("click", function () {
-        if (window.innerWidth <= 768) {
+       if (window.innerWidth <= 1024) {
             closeMenu();
         }
     });
 
     $(document).on("click", function () {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 1024) {
             closeMenu();
         }
     });
@@ -134,7 +134,7 @@ $(document).ready(function () {
     });
 
     $(window).on("resize", function () {
-        if (window.innerWidth > 768) {
+        if (window.innerWidth <= 1024) {
             closeMenu();
         }
     });
