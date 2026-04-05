@@ -1,0 +1,514 @@
+window.LANG_DATA = {
+    common: {
+        ko: {
+            notice: "공지사항",
+            price: "가격안내",
+            portfolio: "포트폴리오",
+            contact: "신청폼"
+        },
+        en: {
+            notice: "Notice",
+            price: "Price",
+            portfolio: "Portfolio",
+            contact: "Apply"
+        }
+    },
+
+    index: {
+             ko: {
+            schedule_sub: "월별 슬롯 현황을 확인하고 문의해 주세요.",
+            schedule_note: "문의 전 공지사항과 가격안내를 먼저 확인해 주세요.",
+            x_button: "X 바로가기",
+            sample_button: "작업 샘플 보기",
+
+            home_notice_title: "공지사항",
+            home_notice_desc: "작업 전 꼭 확인해야 하는 사용 범위, 저작권, 예약 관련 안내를 보기 쉽게 정리했습니다.",
+            home_notice_link: "자세히 보기 →",
+
+            home_price_title: "가격안내",
+            home_price_desc: "베이직과 프리미엄 타입의 금액, 제공 범위, 표정 샘플과 작업과정을 한 페이지에 구성했습니다.",
+            home_price_link: "자세히 보기 →",
+
+            home_portfolio_title: "포트폴리오",
+            home_portfolio_desc: "대표 작업물과 타입별 샘플을 카드 중심으로 배치해 비교가 쉽도록 구성했습니다.",
+            home_portfolio_link: "자세히 보기 →",
+
+            home_contact_title: "신청폼",
+            home_contact_desc: "작업 문의와 신청을 바로 이어갈 수 있도록 마지막 동선을 분명하게 연결했습니다.",
+            home_contact_link: "신청하러 가기 →",
+
+            schedule_title: "작업 일정",
+            slot_left: "남은 슬롯",
+            slot_total: "전체",
+            slot_closed: "예약 마감",
+            slot_event_closed: "이벤트 마감",
+            slot_available_singular: "1 슬롯 남음",
+            slot_available_plural_suffix: "슬롯 남음",
+
+            legend_open: "예약 가능",
+            legend_closed: "예약 마감",
+            legend_event_closed: "이벤트 예약 마감"
+        },
+        en: {
+            schedule_sub: "Check monthly availability before contacting.",
+            schedule_note: "Please read the notice and pricing before inquiry.",
+            x_button: "Go to X",
+            sample_button: "View Samples",
+
+            home_notice_title: "Notice",
+            home_notice_desc: "Important information about usage rights, copyright, and reservations.",
+            home_notice_link: "View details →",
+
+            home_price_title: "Price",
+            home_price_desc: "Overview of pricing, scope, expression samples, and workflow for each type.",
+            home_price_link: "View details →",
+
+            home_portfolio_title: "Portfolio",
+            home_portfolio_desc: "Representative works and sample pieces organized for easy comparison.",
+            home_portfolio_link: "View details →",
+
+            home_contact_title: "Apply",
+            home_contact_desc: "Move directly to the inquiry and application form.",
+            home_contact_link: "Apply now →",
+
+            schedule_title: "Schedule",
+            slot_left: "Slots left",
+            slot_total: "Total",
+            slot_closed: "Closed",
+            slot_event_closed: "Event Closed",
+            slot_available_singular: "1 slot left",
+            slot_available_plural_suffix: "slots left",
+
+            legend_open: "Open",
+            legend_closed: "Closed",
+            legend_event_closed: "Event Closed"
+        }
+    },
+
+    notice: {
+        ko: {
+            notice_title: "공지사항",
+            notice_warning: `※ 공지 미숙지로 인한 문제는 책임지지 않습니다.
+<span class="red">문의 전 공지 사항을 필독해 주세요.</span>`,
+            n1: `모든 작업물의 저작권은 <span class="blue bold">작가 [ 철수 ]</span>에게 있습니다.
+<br><span class="bold">AI 사용 및 무단 사용을 금지</span>합니다.
+<br>저작권 관련 자세한 사용 범위는 하단의 <span class="bold">사용 범위표</span>를 참고해 주세요.`,
+            n2: `<span class="bold">작업 기간은 1주~3주가량 소요</span>됩니다.
+<br>기간은 작업 내용과 컨펌에 따라 유동적으로 달라집니다.`,
+            n3: `<span class="bold">모든 일러스트의 가격은 최소 금액</span>이며,
+작업 난이도에 따라 <span class="bold">추가금이 발생</span>할 수 있습니다.`,
+            n4: `작업 예약 파기 시 <span class="bold">전체 금액의 10% 위약금이 발생</span>합니다.`,
+            n5: `견적가 안내 후 <span class="bold">48시간 내에 예약금 미입금 시 슬롯은 자동 취소</span>되며,<br>
+다음 예약자분께 차례가 넘어갑니다.`,
+            n6: `모든 작업물은 <span class="bold">작가의 포트폴리오로 사용되며 작업 완료일 이후 공개</span>됩니다.`,
+            n7: `불가능하다고 판단되는 작업은 거절될 수 있습니다.`,
+            t_c: `사용 범위`,
+            th_1: `방송용`,
+            th_2: `저작권 구매<br>개인세`,
+            th_3: `저작권 구매<br>기업세`,
+            th_4: `추가금`,
+            th_5: `유튜브 및<br>생방송 사용`,
+            th_6: `타 작가<br>디자인 수정`,
+            th_7: `3D 제작`,
+            th_8: `굿즈 제작`,
+            th_9: `기업 사용`,
+            td_1: `없음`,
+            td_2: `30만원`,
+            td_3: `100만원`,
+            text_tb: `모델 양도 및 재판매 시에는 문의 부탁드립니다.`
+        },
+        en: {
+            notice_title: "Notice",
+            notice_warning: `I am not responsible for any issues caused by not reading the notice.
+<br><span class="red">Please read the guidelines carefully before making an inquiry.</span>`,
+            n1: `The copyright for all works belongs to the artist <span class="blue bold">[ Cheolsu ]</span>.
+<br><span class="bold">The use of AI and any unauthorized use are strictly prohibited.</span>
+<br>Please refer to the <span class="bold">usage scope table</span> below for details regarding copyright.`,
+            n2: `<span class="bold">The production period takes approximately 1 to 3 weeks.</span>
+<br>This may vary depending on the complexity of the request and the feedback process.`,
+            n3: `All listed illustration prices are <span class="bold">base prices</span>,
+and <span class="bold">additional charges may apply</span> depending on the difficulty of the work.`,
+            n4: `If a reservation is canceled, <span class="bold">a cancellation fee of 10% of the total amount will be charged.</span>`,
+            n5: `<span class="bold">If the deposit is not paid within 48 hours</span> after the quote is provided,
+the slot will be <span class="bold">automatically canceled</span> and offered to the next person.`,
+            n6: `All completed works may be <span class="bold">used in the artist's portfolio</span>
+and will be <span class="bold">published after the completion date.</span>`,
+            n7: `Requests that are considered impossible or unsuitable may be declined.`,
+            t_c: `Usage Scope`,
+            th_1: `Streaming`,
+            th_2: `Personal<br>Copyright Purchase`,
+            th_3: `Corporate<br>Copyright Purchase`,
+            th_4: `Additional Fee`,
+            th_5: `YouTube /<br>Live Streaming`,
+            th_6: `Design Editing<br>by Another Artist`,
+            th_7: `3D Production`,
+            th_8: `Merchandise Production`,
+            th_9: `Corporate Use`,
+            td_1: `None`,
+            td_2: `300,000 KRW`,
+            td_3: `1,000,000 KRW`,
+            text_tb: `Please contact me in advance for model transfer or resale.`
+        }
+    },
+
+    price: {
+        ko: {
+            price_title: "가격안내",
+            price_subtitle: "옵션사항",
+
+            basic_title: "베이직 타입",
+            basic_price: `<span class="blue_p">반신 ▶</span> 600,000 원 <br><span class="blue_p">전신 ▶</span> 800,000 원`,
+            basic_desc: `파츠 분리 일러스트 (리깅x)
+<br>디자인 시안 2종 제공 <span class="plus">+</span> <span class="mobile-break">기본 표정 5종 제공</span>`,
+            basic_point1: `깔끔하고 가벼운 셀식 채색묘사가 입혀집니다.`,
+            basic_point2: `핵심적인 빠른 파츠 분리 작업으로<br>빠른 기간 내에 완성물을 받아보실 수 있습니다.`,
+
+            premium_title: "프리미엄 타입",
+            premium_price: `<span class="pink_p">반신 ▶</span> 900,000 원 <br><span class="pink_p">전신 ▶</span> 1,300,000 원`,
+            premium_desc: `파츠 분리 일러스트 (리깅x)
+<br>디자인 시안 3종 제공 <span class="plus">+</span> <span class="mobile-break">기본 표정 5종 제공</span>`,
+            premium_point1: `디테일하고 밀도있는 채색묘사가 입혀집니다.`,
+            premium_point2: `고가동을 위한 300종 이상의<br>섬세한 파츠 분리 작업이 진행됩니다.`,
+
+            expression_title: "표정샘플",
+
+            expression_desc_1: "홍조 / 하트눈 / 반짝눈 / 정색 / 눈물은 기본 표정 파츠로 제공됩니다.",
+            expression_desc_2: "메롱 / 볼빵빵은 브이브릿저 옵션 신청 시 제공됩니다.",
+            expression_desc_3: "예시 외의 표정도 신청 가능합니다.",
+
+            expression_1: "홍조",
+            expression_2: "하트눈",
+            expression_3: "눈물",
+            expression_4: "정색",
+            expression_5: "반짝눈",
+            expression_6: "화남",
+            expression_7: "땀",
+            expression_8: "빙글빙글",
+            expression_9: "머엉",
+            expression_10: ">_<",
+            expression_11: "메롱",
+            expression_12: "볼빵빵",
+
+            process_title: "작업과정",
+
+            p1: "디자인<br>스케치",
+            p2: "디자인<br>확정",
+            p3: "선화 및<br>밑색 진행",
+            p4: "일러스트<br>완성",
+            p5: "표정<br>&<br>추가파츠",
+            p6: "파츠분리",
+            p7: "최종본 전달",
+
+            confirm: "컨펌",
+
+            process_info1: "작업 단계 외의 컨펌 요청 시 추가금이 발생할 수 있습니다.",
+            process_info2: "각 컨펌 횟수는 최대 2회이며, 컨펌 내용은 한 번에 정리하여 전달 부탁드립니다.",
+            process_info3: "리깅 작업 관련 파츠 수정은 무료 AS로 제공됩니다.",
+
+            process_img_1: "디자인 러프",
+            process_img_2: "선화 / 밑색",
+            process_img_3: "일러스트 완성",
+
+            side_option: "옵션사항",
+            side_expression: "표정샘플",
+            side_process: "작업과정",
+            side_refund: "환불안내",
+
+            refund_1: '작업 시작 전 : 90&#37;',
+            refund_2: '디자인 러프 진행 도중 : 70&#37;',
+            refund_3: '선화/밑색 진행 도중 : 50&#37;',
+            refund_4: '일러스트 진행 도중, 일러스트 완성 후 : 환불 불가',
+            refund_5: '판매모델 미사용 : 환불 가능',
+            refund_6: '판매모델 사용 후 : 환불 불가',
+            refund_title: '환불안내',
+            apply_cta_btn: `신청하러 가기 <span class="arrow">&#8594;</span>`,
+            apply_cta_text: "버튼을 누르면 신청폼으로 이동합니다. "
+        },
+
+        en: {
+            price_title: "Price",
+            price_subtitle: "Options",
+
+            basic_title: "Basic Type",
+            basic_price: `<span class="blue_p">Half-body ▶</span> 600,000 KRW <br><span class="blue_p">Full-body ▶</span> 800,000 KRW`,
+            basic_desc: `Separated parts illustration (No rigging)
+<br>2 design drafts provided <br> <span class="mobile-break">5 basic expressions included</span>`,
+            basic_point1: `Clean and light cel-style coloring is applied.`,
+            basic_point2: `Essential parts separation is done efficiently,<br>so you can receive the final work in a shorter time.`,
+
+            premium_title: "Premium Type",
+            premium_price: `<span class="pink_p">Half-body ▶</span> 900,000 KRW <br><span class="pink_p">Full-body ▶</span> 1,300,000 KRW`,
+            premium_desc: `Separated parts illustration (No rigging)
+<br>3 design drafts provided <br> <span class="mobile-break">5 basic expressions included</span>`,
+            premium_point1: `Detailed and rich coloring is applied.`,
+            premium_point2: `Over 300 carefully separated parts are prepared<br>for high mobility and detailed use.`,
+
+            expression_title: "Expressions",
+
+            expression_desc_1: `Blush / Heart Eyes / Sparkle / Straight Face / Tears are included by default.`,
+            expression_desc_2: "Tongue Out / Puffy Cheeks are included with the <b>VBridger option.</b>",
+            expression_desc_3: "Custom expressions can also be requested.",
+
+            expression_1: "Blush",
+            expression_2: "Heart Eyes",
+            expression_3: "Tears",
+            expression_4: "Cold face",
+            expression_5: "Sparkle Eyes",
+            expression_6: "Angry",
+            expression_7: "Sweat",
+            expression_8: "Dizzy",
+            expression_9: "Blank",
+            expression_10: ">_<",
+            expression_11: "Tongue Out",
+            expression_12: "Puffy Cheeks",
+
+            process_title: "Process",
+
+            p1: "Design<br>Sketch",
+            p2: "Design<br>Final",
+            p3: "Lineart &<br>Base Color",
+            p4: "Illustration<br>Complete",
+            p5: "Expressions<br>&<br>Extra Parts",
+            p6: "Parts Separation",
+            p7: "Final Delivery",
+
+            confirm: "Check",
+
+            process_info1: "Additional fees may apply for confirmation requests outside the production stages.",
+            process_info2: "Each stage allows up to 2 rounds of feedback, and all feedback should be submitted at once.",
+            process_info3: "Rigging-related Parts adjustments are provided as free after-service.",
+
+            process_img_1: "Design Rough",
+            process_img_2: "Line Art &amp; Base Colors",
+            process_img_3: "Final Illustration",
+            side_option: "Options",
+            side_expression: "Expressions",
+            side_process: "Process",
+            side_refund: "Refund",
+
+            refund_title: 'Refund information',
+            refund_1: 'Before work begins : 90&#37;',
+            refund_2: 'During the rough design stage : 70&#37;',
+            refund_3: 'During the line art / base coloring stage : 50&#37;',
+            refund_4: 'During the illustration stage, or after the illustration is completed : No refunds',
+            refund_5: 'If the commercial model has not been used : Refund available',
+            refund_6: 'If the commercial model has been used : No refunds',
+            apply_cta_btn: `Apply Now <span class="arrow">&#8594;</span>`,
+            apply_cta_text: "Click the button to go to the application form."
+        }
+    },
+
+    portfolio: {
+        ko: {
+            portfolio_title: "포트폴리오",
+            portfolio_subtitle: "베이직과 프리미엄 타입의 작업 샘플을 확인해보세요.",
+
+            basic_badge: "BASIC",
+            premium_badge: "PREMIUM",
+
+            basic_tab_title: "베이직",
+            basic_tab_desc: "깔끔하고 가벼운 셀식 채색",
+
+            premium_tab_title: "프리미엄",
+            premium_tab_desc: "디테일하고 밀도 높은 표현",
+
+            compare_title: "타입비교",
+            compare_basic_title: "베이직 추천",
+            compare_basic_desc: "깔끔한 인상, 빠른 작업, 가벼운 구성을 원하시는 분께 추천드립니다.",
+
+            compare_premium_title: "프리미엄 추천",
+            compare_premium_desc: "풍부한 디테일과 높은 완성도의 작업을 원하시는 분께 추천드립니다.",
+
+            apply_cta_btn: `신청하러 가기 <span class="arrow">&#8594;</span>`,
+            apply_cta_text: "버튼을 누르면 신청폼으로 이동합니다."
+        },
+
+        en: {
+            portfolio_title: "Portfolio",
+            portfolio_subtitle: "Browse sample works for the Basic and Premium types.",
+
+            basic_badge: "BASIC",
+            premium_badge: "PREMIUM",
+
+            basic_tab_title: "Basic",
+            basic_tab_desc: "Clean and light cel-style coloring",
+
+            premium_tab_title: "Premium",
+            premium_tab_desc: "Detailed and richer rendering",
+
+            compare_title: "Type Comparison",
+            compare_basic_title: "Recommended for Basic",
+            compare_basic_desc: "Recommended for clients who want a clean look, faster workflow, and a lighter composition.",
+
+            compare_premium_title: "Recommended for Premium",
+            compare_premium_desc: "Recommended for clients who want richer detail and a more polished result.",
+
+            apply_cta_btn: `Apply Now <span class="arrow">&#8594;</span>`,
+            apply_cta_text: "Click the button to go to the application form."
+        }
+    }
+};
+
+$(document).ready(function () {
+    function getSavedLang() {
+        return localStorage.getItem("lang") || "ko";
+    }
+
+    function syncLangState(lang) {
+        const safeLang = lang === "en" ? "en" : "ko";
+
+        localStorage.setItem("lang", safeLang);
+        document.documentElement.setAttribute("data-lang", safeLang);
+
+        $("#ko, #ko2").removeClass("active");
+        $("#en, #en2").removeClass("active");
+
+        if (safeLang === "en") {
+            $("#en, #en2").addClass("active");
+        } else {
+            $("#ko, #ko2").addClass("active");
+        }
+    }
+
+    window.SiteLang = {
+        getLang() {
+            return getSavedLang();
+        },
+
+        setLang(lang) {
+            syncLangState(lang);
+
+            const currentLang = this.getLang();
+            this.apply(LANG_DATA.common, ".nav [data-key]", currentLang);
+            this.applyPage(currentLang);
+
+            $(document).trigger("languageChanged", [currentLang]);
+        },
+
+        updateButtons(lang) {
+            syncLangState(lang);
+        },
+
+        apply(langData, selector, lang) {
+            const currentData = langData[lang] || langData.ko;
+
+            $(selector).each(function () {
+                const key = $(this).data("key") || $(this).data("page-key");
+                if (currentData[key]) {
+                    $(this).html(currentData[key]);
+                }
+            });
+        },
+
+        applyPage(lang) {
+            const page = $("body").data("page");
+            if (!page || !LANG_DATA[page]) return;
+
+            this.apply(LANG_DATA[page], "[data-page-key]", lang);
+        }
+    };
+
+    function setActiveMenu() {
+        let current = window.location.pathname.split("/").pop();
+
+        if (!current || current === "/") {
+            current = "index.html";
+        }
+
+        $(".nav li a").removeClass("active");
+
+        $(".nav li a").each(function () {
+            const link = $(this).attr("href");
+            if (link === current) {
+                $(this).addClass("active");
+            }
+        });
+    }
+
+    function openMenu() {
+        $(".menu-btn").addClass("active").attr("aria-label", "메뉴 닫기");
+        $(".nav").addClass("active");
+    }
+
+    function closeMenu() {
+        $(".menu-btn").removeClass("active").attr("aria-label", "메뉴 열기");
+        $(".nav").removeClass("active");
+    }
+
+    function toggleTopButton() {
+        if ($(window).scrollTop() > 300) {
+            $(".top-btn").addClass("show");
+        } else {
+            $(".top-btn").removeClass("show");
+        }
+    }
+
+    $("#ko, #ko2").on("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        SiteLang.setLang("ko");
+    });
+
+    $("#en, #en2").on("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        SiteLang.setLang("en");
+    });
+
+    $(".menu-btn").on("click", function (e) {
+        e.stopPropagation();
+        $(".nav").hasClass("active") ? closeMenu() : openMenu();
+    });
+
+    $(".nav").on("click", function (e) {
+        e.stopPropagation();
+    });
+
+    $(".nav li a").on("click", function () {
+        if (window.innerWidth <= 768) {
+            closeMenu();
+        }
+    });
+
+    $(document).on("click", function () {
+        if (window.innerWidth <= 768) {
+            closeMenu();
+        }
+    });
+
+    $(".top-btn").on("click", function () {
+        $("html, body").animate({ scrollTop: 0 }, 700, "linear");
+    });
+
+    $(window).on("scroll", function () {
+        toggleTopButton();
+    });
+
+    $(window).on("resize", function () {
+        if (window.innerWidth > 768) {
+            closeMenu();
+        }
+    });
+
+    $(window).on("pageshow", function () {
+        const lang = getSavedLang();
+        syncLangState(lang);
+        SiteLang.apply(LANG_DATA.common, ".nav [data-key]", lang);
+        SiteLang.applyPage(lang);
+        setActiveMenu();
+        document.documentElement.classList.add("lang-ready");
+    });
+
+    const savedLang = getSavedLang();
+    syncLangState(savedLang);
+    SiteLang.apply(LANG_DATA.common, ".nav [data-key]", savedLang);
+    SiteLang.applyPage(savedLang);
+
+    setActiveMenu();
+    closeMenu();
+    toggleTopButton();
+
+    requestAnimationFrame(function () {
+        document.documentElement.classList.add("lang-ready");
+    });
+});

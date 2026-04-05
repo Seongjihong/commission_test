@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페이지명 / English Title</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/cheolsu_icon.ico">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/page-name.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/Paperlogy.css" type="text/css">
+</head>
+
+<body>
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header>
+        <div class="header_inner">
+
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./img/cheolsu.png" alt="CHEOLSU 로고">
+                </a>
+            </div>
+
+            <div class="mobile-title">
+                <a href="index.html">CHEOLSU</a>
+            </div>
+
+            <nav>
+                <ul class="nav">
+                    <li class="mobile-lang">
+                        <div class="lang-switch">
+                            <button id="ko2" class="active" type="button">KO</button>
+                            <button id="en2" type="button">EN</button>
+                        </div>
+                    </li>
+
+                    <li><a href="notice.html" data-key="notice">공지사항</a></li>
+                    <li><a href="price.html" data-key="price">가격안내</a></li>
+                    <li><a href="portfolio.html" data-key="portfolio">포트폴리오</a></li>
+                    <li><a href="contact.html" data-key="contact">신청폼</a></li>
+                </ul>
+            </nav>
+
+            <div class="lang-switch">
+                <button id="ko" class="active" type="button">KO</button>
+                <button id="en" type="button">EN</button>
+            </div>
+
+            <button class="menu-btn" type="button" aria-label="메뉴 열기">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+    <main class="page page-name-page">
+
+        <!-- 공통 페이지 제목 영역 -->
+        <section class="page-head">
+            <div class="inner">
+                <div class="page-head-icon">
+                    <img src="./img/page_icon.svg" alt="페이지 아이콘">
+                </div>
+                <h1 data-key="page_title">페이지명</h1>
+            </div>
+        </section>
+
+        <!-- 페이지 전용 내용 -->
+        <section class="page-body">
+            <div class="inner">
+                페이지 내용
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer>
+        <div class="footerin">
+            <p>© 2026 Cheolsu. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- =========================
+         SCRIPT
+    ========================== -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./js/lang.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/page-name.js"></script>
+</body>
+
+</html>
