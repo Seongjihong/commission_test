@@ -625,6 +625,13 @@ main {
     line-height: 1.6;
 }
 
+.schedule-note
+{
+
+    color: var(--text-soft);
+    font-size: 17px;
+    line-height: 1.6;
+}
 /* =========================
    HOME GRID
 ========================= */
@@ -1324,20 +1331,130 @@ html[data-lang="en"] #ko2 {
 }
 
 @media (max-width: 768px) {
+     .info-panel {
+        padding: 20px 14px;
+        overflow-x: hidden;
+    }
+
+    .hero-copy {
+        min-width: 0;
+    }
+
     .schedule-board {
-        grid-template-columns: 1fr;
-        gap: 14px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+        margin: 16px 0 14px;
+        width: 100%;
+        min-width: 0;
     }
 
     .schedule-card.clean-card {
-        padding: 18px 16px;
-        border-radius: 20px;
+        min-width: 0;
+        width: 100%;
+        padding: 10px 6px;
+        border-radius: 14px;
+        overflow: hidden;
     }
 
-    .schedule-card.clean-card .schedule-card-head,
-    .schedule-item-head {
-        align-items: flex-start;
+    .schedule-card.clean-card .schedule-card-head {
         flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        margin-bottom: 8px;
+        padding-bottom: 7px;
+    }
+
+    .schedule-item-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        margin-bottom: 5px;
+    }
+
+    .schedule-card.clean-card .schedule-month {
+        font-size: 14px;
+        line-height: 1.2;
+        word-break: keep-all;
+    }
+
+    .schedule-card-badge {
+        min-height: 22px;
+        padding: 0 6px;
+        font-size: 9px;
+        max-width: 100%;
+        white-space: normal;
+    }
+
+    .schedule-item {
+        padding: 7px 0;
+        min-width: 0;
+    }
+
+    .schedule-item-label {
+        min-height: 20px;
+        padding: 0 6px;
+        font-size: 9px;
+        max-width: 100%;
+        white-space: normal;
+    }
+
+    .schedule-item-value {
+        font-size: 11px;
+        line-height: 1.3;
+        text-align: left;
+        word-break: keep-all;
+    }
+
+    .slot-diamonds {
+        gap: 5px;
+        padding: 2px 1px;
+        min-width: 0;
+    }
+
+    .slot-diamond {
+        width: 8px;
+        height: 8px;
+        flex: 0 0 auto;
+    }
+
+    .schedule-item-detail {
+        margin-top: 5px;
+        font-size: 9px;
+        line-height: 1.3;
+        word-break: break-word;
+    }
+
+    .schedule-memo {
+        margin-top: 7px;
+        padding-top: 7px;
+        font-size: 9px;
+        line-height: 1.35;
+        word-break: break-word;
+    }
+    .schedule-board {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+        margin: 18px 0 16px;
+    }
+
+    .schedule-card.clean-card {
+        padding: 12px 8px;
+        border-radius: 16px;
+    }
+
+    .schedule-card.clean-card .schedule-card-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin-bottom: 10px;
+        padding-bottom: 8px;
+    }
+
+    .schedule-item-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        margin-bottom: 6px;
     }
 
     .schedule-card-badge,
@@ -1346,30 +1463,54 @@ html[data-lang="en"] #ko2 {
     }
 
     .schedule-card.clean-card .schedule-month {
-        font-size: 20px;
+        font-size: 15px;
+    }
+
+    .schedule-card-badge {
+        min-height: 24px;
+        padding: 0 8px;
+        font-size: 10px;
+    }
+
+    .schedule-item {
+        padding: 8px 0;
+    }
+
+    .schedule-item-label {
+        min-height: 22px;
+        padding: 0 7px;
+        font-size: 10px;
     }
 
     .schedule-item-value {
-        font-size: 16px;
+        font-size: 12px;
+        line-height: 1.3;
     }
 
     .slot-diamonds {
-        gap: 10px;
+        gap: 6px;
+        padding: 3px 2px;
+        min-height: auto;
     }
 
     .slot-diamond {
-        width: 14px;
-        height: 14px;
+        width: 9px;
+        height: 9px;
+    }
+
+    .schedule-item-detail {
+        margin-top: 6px;
+        font-size: 10px;
+        line-height: 1.35;
+    }
+
+    .schedule-memo {
+        margin-top: 8px;
+        padding-top: 8px;
+        font-size: 10px;
+        line-height: 1.4;
     }
 }
-
-    .schedule-note
-    {
-
-    color: var(--text-soft);
-    font-size: 17px;
-    line-height: 1.6
-    }
 
     .legend-divider {
     color: #9aa7b3;
@@ -1442,14 +1583,17 @@ html[data-lang="en"] #ko2 {
     font-size: 14px;
     font-weight: 600;
     line-height: 1.65;
+    text-align: center;
 }
 
 @media (max-width: 1024px) {
-    .profile-bubble {
-        text-align: center;
+
+    .nav {
+        z-index: 1200;
     }
 
-    .profile-bubble p {
-        font-size: 13px;
+    body.menu-open {
+        overflow: hidden;
     }
+
 }

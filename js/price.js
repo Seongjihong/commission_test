@@ -12,8 +12,8 @@ $(document).ready(function () {
     const EXTRA_GAP = 24;
     const BOTTOM_TOLERANCE = 12;
 
-    const SIDE_SCROLL_DURATION = 100;
-    const TOP_SCROLL_DURATION = 100;
+    const SIDE_SCROLL_DURATION = 220;
+    const TOP_SCROLL_DURATION = 300;
 
     let isAutoScrolling = false;
     let lockedTargetSelector = null;
@@ -150,9 +150,10 @@ function getCurrentLang() {
         applyActiveTarget(nextTarget);
     }
 
-    function finishAutoScroll() {
+    
         clearTimeout(scrollEndTimer);
-
+        
+function finishAutoScroll() {
         scrollEndTimer = setTimeout(function () {
             isAutoScrolling = false;
 
@@ -163,27 +164,32 @@ function getCurrentLang() {
             }
 
             toggleTopButton();
-        }, 30);
+        }, 100);
     }
 
-    function smoothScrollTo(topValue, duration, targetSelector) {
+   function smoothScrollTo(topValue, duration, targetSelector) {
+        // 1. 이미 진행 중인 애니메이션이 있다면 즉시 멈춤
+        $("html, body").stop(true, false);
+
         isAutoScrolling = true;
         lockedTargetSelector = targetSelector || null;
 
         if (lockedTargetSelector) {
             applyActiveTarget(lockedTargetSelector);
+       
+       
         }
-
-        $("html, body").stop(true, true).animate(
-            {
-                scrollTop: clampScrollTop(topValue)
-            },
-            duration,
-             "swing",
-            function () {
-                finishAutoScroll();
-            }
-        );
+        
+$("html, body").stop(true, false).animate(
+    {
+        scrollTop: clampScrollTop(topValue)
+    },
+    duration,
+    "linear",
+    function () {
+        finishAutoScroll();
+    }
+);
     }
 
     function moveToSection(targetSelector) {

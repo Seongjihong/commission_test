@@ -781,7 +781,7 @@ margin-bottom: 14px;
     border-radius: 50%;
     background: rgba(59, 166, 234, 0.35);
     cursor: pointer;
-     overflow: hidden;
+      overflow: visible;
 }
 
 .side-nav-dot.active {
@@ -797,7 +797,7 @@ margin-bottom: 14px;
     border-radius: 999px;
     background: #3BA6EA;
     color: #fff;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 700;
     white-space: nowrap;
     opacity: 0;
