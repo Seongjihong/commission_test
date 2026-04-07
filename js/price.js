@@ -1,4 +1,11 @@
 $(document).ready(function () {
+
+    $.easing.easeInOutCubic = function (x, t, b, c, d) {
+    t /= d;
+    t--;
+    return c * (t * t * t + 1) + b;
+};
+
     const SELECTORS = {
         page: ".price-page",
         sideNav: ".side-nav",
@@ -12,8 +19,8 @@ $(document).ready(function () {
     const EXTRA_GAP = 24;
     const BOTTOM_TOLERANCE = 12;
 
-    const SIDE_SCROLL_DURATION = 220;
-    const TOP_SCROLL_DURATION = 300;
+    const SIDE_SCROLL_DURATION = 260;
+    const TOP_SCROLL_DURATION = 320;
 
     let isAutoScrolling = false;
     let lockedTargetSelector = null;
@@ -164,12 +171,12 @@ function finishAutoScroll() {
             }
 
             toggleTopButton();
-        }, 100);
+        }, 30);
     }
 
    function smoothScrollTo(topValue, duration, targetSelector) {
         // 1. 이미 진행 중인 애니메이션이 있다면 즉시 멈춤
-        $("html, body").stop(true, false);
+        // $("html, body").stop(true, true).animate(
 
         isAutoScrolling = true;
         lockedTargetSelector = targetSelector || null;
@@ -180,12 +187,13 @@ function finishAutoScroll() {
        
         }
         
-$("html, body").stop(true, false).animate(
+$("html, body").stop(true, true).animate(
     {
         scrollTop: clampScrollTop(topValue)
     },
     duration,
-    "linear",
+    "easeInOutCubic",
+
     function () {
         finishAutoScroll();
     }
@@ -293,7 +301,7 @@ $("html, body").stop(true, false).animate(
         $(window).on("scroll.pricePage", function () {
             toggleTopButton();
 
-            if (isAutoScrolling || lockedTargetSelector) return;
+            if (isAutoScrolling) return;
 
             clearTimeout(scrollEndTimer);
             scrollEndTimer = setTimeout(function () {
@@ -341,3 +349,11 @@ $("html, body").stop(true, false).animate(
 
     initPricePage();
 });
+
+document.querySelectorAll(".price-card").forEach(card => {
+    card.addEventListener("click", () => {
+        const type = card.dataset.type;
+        location.href = `portfolio.html?type=${type}`;
+    });
+});
+

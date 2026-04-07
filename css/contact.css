@@ -1,0 +1,436 @@
+.contact-page {
+    display: block;
+    width: 100%;
+}
+
+.contact-head {
+    padding-bottom: 28px;
+}
+
+.contact-head-icon {
+    width: 42px;
+    margin: 0 auto 18px;
+}
+
+.contact-head-icon img {
+    display: block;
+    width: 100%;
+}
+
+.contact-head-text {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 17px;
+    color: var(--text-soft);
+    text-align: center;
+    word-break: keep-all;
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.contact-card {
+    border-radius: 32px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(185, 214, 234, 0.72);
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 30px 28px;
+}
+
+.contact-card--main {
+    position: sticky;
+    top: 120px;
+}
+
+.contact-guide {
+    margin-top: 4px;
+}
+
+.contact-step-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.contact-step-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px;
+    border-radius: 22px;
+    background: rgba(248, 252, 255, 0.95);
+    border: 1px solid rgba(219, 231, 241, 0.95);
+}
+
+.step-num {
+    flex: 0 0 auto;
+    min-width: 54px;
+    height: 54px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    background: #eef8fe;
+    color: var(--sky-deep);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+
+.contact-step-list strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 18px;
+    color: var(--text);
+}
+
+.contact-step-list p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-soft);
+}
+
+.contact-notice {
+    margin-top: 18px;
+    padding: 18px;
+    border-radius: 22px;
+    background: rgba(255, 250, 245, 0.92);
+    border: 1px solid rgba(255, 210, 180, 0.5);
+}
+
+.notice-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #5a4636;
+    word-break: keep-all;
+}
+
+.notice-text strong {
+    color: #d77a4c;
+}
+
+.payment-flow {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed rgba(200, 180, 160, 0.5);
+}
+
+.flow-title {
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--sky-deep);
+}
+
+.flow-desc {
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.7;
+    word-break: keep-all;
+}
+
+.flow-sub {
+    margin-top: 4px;
+    font-size: 13px;
+    color: #777;
+    line-height: 1.7;
+}
+
+.contact-schedule-section {
+   margin-bottom: 24px;
+}
+
+.contact-card--schedule {
+    padding: 30px 28px;
+}
+
+.linked-schedule-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.linked-schedule-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.linked-schedule-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: #f7fbff;
+    border: 1px solid #dbe7f1;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.linked-schedule-chip strong {
+    font-weight: 700;
+}
+
+.linked-schedule-chip span {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.linked-schedule-chip.available {
+    background: #eef8fe;
+    border-color: #cfe7f6;
+    color: var(--sky-deep);
+}
+
+.linked-schedule-chip.closing {
+    background: #fff7ea;
+    border-color: #f0d7a8;
+    color: #b97a16;
+}
+
+.linked-schedule-chip.upcoming {
+    background: #f4f4f4;
+    border-color: #dddddd;
+    color: #666;
+}
+
+.linked-schedule-chip.closed {
+    background: #f9f2f4;
+    border-color: #ead1d8;
+    color: #b16a7b;
+}
+
+.linked-schedule-empty {
+    font-size: 14px;
+    color: var(--text-soft);
+}
+
+.contact-action-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.contact-mail-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 58px;
+    padding: 0 24px;
+    border-radius: 999px;
+    background: #fff;
+    border: 1px solid #d7e7f2;
+    color: var(--sky-deep);
+    font-size: 16px;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.contact-mail-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+    background: #fafdff;
+}
+
+.contact-copy-note {
+    min-height: 26px;
+    margin-top: 14px;
+    font-size: 14px;
+    color: var(--sky-deep);
+    font-weight: 700;
+    text-align: center;
+}
+
+.template-box {
+    overflow: hidden;
+    border-radius: 28px;
+    background: linear-gradient(180deg, rgba(247, 251, 255, 0.96) 0%, rgba(255, 255, 255, 0.98) 100%);
+    border: 1px solid rgba(219, 231, 241, 0.95);
+}
+
+.template-box pre {
+    margin: 0;
+    padding: 28px 26px;
+    font-family: "Paperlogy", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.95;
+    color: var(--text);
+    white-space: pre-wrap;
+    word-break: keep-all;
+}
+
+html[data-lang="en"] #templatePreview {
+    display: block;
+}
+
+@media (max-width: 1200px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-card--main {
+        position: static;
+    }
+}
+
+@media (max-width: 1024px) {
+    .contact-card {
+        padding: 26px 22px;
+        border-radius: 26px;
+    }
+
+    .contact-head-text {
+        font-size: 16px;
+    }
+
+    .template-box pre {
+        padding: 24px 20px;
+        font-size: 14px;
+        line-height: 1.85;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-card {
+        padding: 22px 18px;
+        border-radius: 22px;
+    }
+
+    .contact-step-list li {
+        padding: 16px 14px;
+        border-radius: 18px;
+    }
+
+    .step-num {
+        min-width: 46px;
+        height: 46px;
+        border-radius: 14px;
+        font-size: 12px;
+    }
+
+    .contact-step-list strong {
+        font-size: 16px;
+    }
+
+    .contact-step-list p,
+    .template-box pre,
+    .notice-text,
+    .flow-desc {
+        font-size: 14px;
+    }
+
+    .contact-mail-btn,
+    .apply-cta__btn {
+        min-height: 54px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .contact-card--schedule {
+        padding: 26px 22px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-schedule-section {
+        margin-top: 18px;
+    }
+
+    .contact-card--schedule {
+        padding: 22px 18px;
+    }
+}
+
+.slot-diamonds {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 6px;
+}
+
+.slot-diamond {
+      width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    border-radius: 2px;
+    flex: 0 0 auto;
+}
+
+
+/* 일반 */
+.slot-diamond.filled.regular {
+    background: #5a97d1;
+    border: 1px solid #5a97d1;
+}
+
+/* 이벤트 */
+.slot-diamond.filled.event {
+    background: #e4b2ba;
+    border: 1px solid #e4b2ba;
+}
+
+/* 협업 (노란색 ⭐) */
+.slot-diamond.filled.collab {
+    background: #ffd84d;
+    border: 1px solid #ffd84d;
+}
+
+.slot-diamond.empty.regular {
+    border-color: #2f6fa8;
+}
+
+.slot-diamond.empty.event {
+    border-color: #c27c87;
+}
+
+.slot-diamond.empty.collab {
+    border-color: #caa100;
+}
+
+/* ===== 오픈 예정 / 마감 → 전체 회색 처리 ===== */
+
+.linked-schedule-chip.upcoming .slot-diamond,
+.linked-schedule-chip.closed .slot-diamond {
+    background: #e0e0e0 !important;
+    border-color: #bdbdbd !important;
+}
+
+/* empty도 동일하게 */
+.linked-schedule-chip.upcoming .slot-diamond.empty,
+.linked-schedule-chip.closed .slot-diamond.empty {
+    background: #f5f5f5 !important;
+    border-color: #cfcfcf !important;
+}
+
+.linked-schedule-chip.upcoming .slot-diamond,
+.linked-schedule-chip.closed .slot-diamond {
+    opacity: 0.6;
+}
+
+/* ===== 마감 상태 → 다이아 회색 ===== */
+.linked-schedule-chip.closed .slot-diamond {
+    background: #e0e0e0 !important;
+    border-color: #bdbdbd !important;
+}
+
+/* empty도 같이 */
+.linked-schedule-chip.closed .slot-diamond.empty {
+    background: #f5f5f5 !important;
+    border-color: #cfcfcf !important;
+}
+

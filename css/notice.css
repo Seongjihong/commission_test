@@ -331,20 +331,19 @@
 }
 
 .apply-cta__btn {
-    display: inline-flex;
+       display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    min-width: 250px;
+    min-width: 240px;
     min-height: 60px;
     padding: 0 28px;
     border-radius: 999px;
-    background: #222;
+    background: #3BA6EA;
     color: #fff;
     text-decoration: none;
     font-size: 18px;
     font-weight: 700;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.14);
     transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
@@ -400,7 +399,7 @@
     }
 
     .icon_pin {
-        width: 52px;
+        width: 40px;
     }
 
     .hero-text {
@@ -484,6 +483,12 @@
 
         
     }
+
+    html[data-lang="en"] .t1 th,
+html[data-lang="en"] .t1 td {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
 
     .t1 thead th:first-child {
         border-top-left-radius: 22px;

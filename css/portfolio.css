@@ -134,7 +134,7 @@
 .portfolio-type-intro {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     gap: 32px;
     margin-bottom: 28px;
 }
@@ -252,6 +252,7 @@
     font-size: 42px;
     color: #222;
     word-break: keep-all;
+
 }
 
 .portfolio-main-info p {
@@ -418,6 +419,9 @@
 }
 
 /* modal */
+
+
+
 .portfolio-modal {
     position: fixed;
     inset: 0;
@@ -470,6 +474,9 @@
     flex-direction: column;
     justify-content: center;
     padding: 34px 30px;
+        position: relative;
+        align-items: center;
+    
 }
 
 .portfolio-modal__info h3 {
@@ -496,6 +503,7 @@
     cursor: pointer;
 }
 
+
 .portfolio-modal__nav {
     position: absolute;
     top: 50%;
@@ -504,8 +512,8 @@
     height: 52px;
     border: 0;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.94);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    /* background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); */
     font-size: 24px;
     cursor: pointer;
     transform: translateY(-50%);
@@ -634,6 +642,9 @@ body.modal-open {
 
     .portfolio-modal__dialog {
         width: calc(100% - 20px);
+        max-height: calc(100vh - 20px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .portfolio-modal__info {
@@ -689,6 +700,7 @@ body.modal-open {
 
 @media (max-width: 768px) {
     .portfolio-modal__close {
+        
         top: 10px;
         right: 10px;
 
@@ -701,4 +713,27 @@ body.modal-open {
         color: #111;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
+}
+
+.portfolio-item-info {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.portfolio-item-info p {
+    display: none;
+}
+
+
+/* 특정 카드만 살림 */
+.portfolio-item.has-desc .portfolio-item-info p {
+    display: block;
+}
+
+/* 모달은 항상 보이게 */
+.portfolio-modal__info p {
+    display: block;
+        white-space: pre-line;
+        text-align: center;
+        padding: 0 15%;
 }

@@ -7,7 +7,6 @@
     display: block;
     width: 100%;
     min-height: auto;
-    padding-top: 120px;
 }
 
 .price-hero,
@@ -26,17 +25,12 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    
-
+        padding-top: 130px;
 }
 
-.price-hero {
-margin-bottom: 14px;
-    font-size: 42px;
-    font-weight: 700;
-    color: #3BA6EA;
-    letter-spacing: 3px;
-    text-align: center;
+main
+{
+    padding: 0;
 }
 
 .icon_price {
@@ -1025,7 +1019,7 @@ margin-bottom: 14px;
     .floating-nav {
         right: 12px;
         gap: 12px;
-        top:80%;
+        top:85%;
     }
 
     .side-nav-top {
@@ -1033,6 +1027,18 @@ margin-bottom: 14px;
         height: 48px;
     
     }
+ .side-nav
+ {
+    display: none;
+ }
 
+}
 
+.price-guide-text {
+max-width: 720px;
+    margin: 0 auto;
+    font-size: 17px;
+    color: #666;
+    letter-spacing: 0;
+    text-align: center;
 }

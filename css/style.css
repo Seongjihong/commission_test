@@ -1597,3 +1597,82 @@ html[data-lang="en"] #ko2 {
     }
 
 }
+
+/* collab 라벨 */
+.schedule-item-label.collab {
+    background: #fff7cc;
+    color: #b8860b;
+}
+
+/* 상태 텍스트 */
+.schedule-item-value.is-collab-open {
+    color: #b8860b;
+}
+
+.schedule-item-value.is-collab-closed {
+    color: #c9a43a;
+}
+
+/* 다이아몬드 */
+.slot-diamond.filled.collab {
+    background: #ffd84d;
+    border: 1px solid #ffd84d;
+}
+
+.legend-dot.is-collab-open {
+    background: #ffffff;
+    border: 1.5px solid #b8860b;
+}
+
+.legend-dot.is-collab-closed {
+    background: #ffd84d;
+}
+
+body::before { display: none; }
+
+.header_inner,
+.profile-panel,
+.info-panel,
+.schedule-card.clean-card {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+/* 전체 마감 */
+.schedule-card.clean-card.is-closed-month {
+    background: #f3f5f7;
+    border-color: #d5dde5;
+    opacity: 0.85;
+}
+
+/* 오픈 예정 */
+.schedule-card.clean-card.is-upcoming-month {
+    background: #f3f5f7;
+    border-color: #d5dde5;
+    opacity: 0.75;
+}
+
+.schedule-card.clean-card.is-closed-month .schedule-month,
+.schedule-card.clean-card.is-upcoming-month .schedule-month {
+    color: #9aa7b3;
+}
+
+.schedule-card.clean-card.is-closed-month .schedule-item-label,
+.schedule-card.clean-card.is-upcoming-month .schedule-item-label {
+    opacity: 0.6;
+}
+.schedule-card.clean-card.is-closed-month .slot-diamond,
+.schedule-card.clean-card.is-upcoming-month .slot-diamond {
+    opacity: 0.3;
+}
+
+.schedule-card.clean-card.is-closed-month:hover,
+.schedule-card.clean-card.is-upcoming-month:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.schedule-card.clean-card.is-upcoming-month {
+    border-style: dashed;
+    opacity: 0.6;
+}

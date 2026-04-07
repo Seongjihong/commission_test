@@ -107,17 +107,17 @@
                     <ul class="type-feature-list" id="portfolioFeatureList"></ul>
                 </div>
 
-                <div class="portfolio-main-card">
+                <!-- <div class="portfolio-main-card">
                     <button type="button" class="portfolio-main-thumb" id="portfolioMainButton">
                         <img id="portfolioMainImage" src="./img/b_type_0.png" alt="베이직 대표 작업물">
-                    </button>
+                    </button> -->
 
-                    <div class="portfolio-main-info">
+                    <!-- <div class="portfolio-main-info">
                         <span class="portfolio-label basic" id="portfolioMainLabel">BASIC</span>
                         <h3 id="portfolioMainName">Basic Sample 01</h3>
                         <p id="portfolioMainDesc">대표 작업물을 클릭하면 크게 볼 수 있습니다.</p>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="portfolio-grid" id="portfolioGrid"></div>
             </div>
@@ -126,7 +126,7 @@
         <section class="apply-cta">
             <div class="inner">
                 <a href="contact.html" class="apply-cta__btn" data-key="apply_cta_btn">
-                    신청하러 가기
+                    신청폼으로 이동하기
                     <span class="arrow">&#8594;</span>
                 </a>
                 <p data-key="apply_cta_text">버튼을 누르면 신청폼으로 이동합니다.</p>
@@ -140,8 +140,7 @@
         <div class="portfolio-modal__dialog" role="dialog" aria-modal="true" aria-label="포트폴리오 상세보기">
             <button type="button" class="portfolio-modal__close" id="modalClose" aria-label="닫기">&times;</button>
 
-            <button type="button" class="portfolio-modal__nav prev" id="modalPrev" aria-label="이전 이미지">&#10094;</button>
-            <button type="button" class="portfolio-modal__nav next" id="modalNext" aria-label="다음 이미지">&#10095;</button>
+          
 
             <div class="portfolio-modal__content">
                 <div class="portfolio-modal__img-wrap">
@@ -149,6 +148,8 @@
                 </div>
 
                 <div class="portfolio-modal__info">
+                      <button type="button" class="portfolio-modal__nav prev" id="modalPrev" aria-label="이전 이미지">&#10094;</button>
+            <button type="button" class="portfolio-modal__nav next" id="modalNext" aria-label="다음 이미지">&#10095;</button>
                     <span class="portfolio-label" id="modalLabel"></span>
                     <h3 id="modalTitle"></h3>
                     <p id="modalDesc"></p>

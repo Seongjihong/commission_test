@@ -32,10 +32,14 @@ function getSectionLabel(type) {
     const lang = getCurrentLang();
 
     if (lang === "en") {
-        return type === "event" ? "Event" : "Regular";
+        if (type === "event") return "Event";
+        if (type === "collab") return "Collab";
+        return "Regular";
     }
 
-    return type === "event" ? "이벤트" : "일반";
+    if (type === "event") return "이벤트";
+    if (type === "collab") return "협업";
+    return "일반";
 }
 
 function getOverallLabel(statusKey) {
@@ -109,7 +113,6 @@ function getSectionState(slotData, type) {
             booked: 0,
             remaining: 0,
             summary: getCurrentLang() === "en" ? "Coming soon" : "오픈 예정",
-            // detail: "",
             statusKey: "upcoming",
             className: "is-upcoming"
         };
@@ -126,9 +129,13 @@ function getSectionState(slotData, type) {
             booked,
             remaining,
             summary: getRemainingText(remaining),
-            // detail: getCapacityText(total, booked),
             statusKey: "closed",
-            className: type === "event" ? "is-event-closed" : "is-closed"
+            className:
+                type === "event"
+                    ? "is-event-closed"
+                    : type === "collab"
+                    ? "is-collab-closed"
+                    : "is-closed"
         };
     }
 
@@ -153,7 +160,12 @@ function getSectionState(slotData, type) {
         summary: getRemainingText(remaining),
         detail: getCapacityText(total, booked),
         statusKey: "available",
-        className: type === "event" ? "is-event-open" : "is-open"
+        className:
+            type === "event"
+                ? "is-event-open"
+                : type === "collab"
+                ? "is-collab-open"
+                : "is-open"
     };
 }
 
@@ -203,9 +215,9 @@ function renderSection(sectionState) {
                 <span class="schedule-item-label ${sectionState.type}">
                     ${getSectionLabel(sectionState.type)}
                 </span>
-                <span class="schedule-item-value ${sectionState.className}">
-                    ${escapeHtml(sectionState.summary)}
-                </span>
+               <span class="schedule-item-value ${sectionState.className}">
+    ${sectionState.type === "collab" ? "" : escapeHtml(sectionState.summary)}
+</span>
             </div>
 
             ${hasSlots ? `
@@ -214,9 +226,7 @@ function renderSection(sectionState) {
                 </div>
             ` : ""}
 
-            ${sectionState.detail ? `
-                <p class="schedule-item-detail">${escapeHtml(sectionState.detail)}</p>
-            ` : ""}
+
         </div>
     `;
 }
@@ -238,7 +248,8 @@ function renderMemo(item, cardStatus) {
 function renderScheduleCard(item) {
     const states = [
         hasSection(item.regular) ? getSectionState(item.regular, "regular") : null,
-        hasSection(item.event) ? getSectionState(item.event, "event") : null
+        hasSection(item.event) ? getSectionState(item.event, "event") : null,
+        hasSection(item.collab) ? getSectionState(item.collab, "collab") : null
     ].filter(Boolean);
 
     const cardStatus = getCardStatus(states);
@@ -267,24 +278,25 @@ function renderSchedule() {
 
     if (!board || typeof SCHEDULE_DATA === "undefined") return;
 
-const normalizedData = [];
-let currentYear = START_YEAR;
-let prevMonth = 0;
+    const normalizedData = [];
+    let currentYear = START_YEAR;
+    let prevMonth = 0;
 
-SCHEDULE_DATA.forEach((item) => {
-    const month = Number(item.month);
+    SCHEDULE_DATA.forEach((item) => {
+        const month = Number(item.month);
 
-    if (prevMonth && month < prevMonth) {
-        currentYear += 1;
-    }
+        if (prevMonth && month < prevMonth) {
+            currentYear += 1;
+        }
 
-    normalizedData.push({
-        ...item,
-        year: item.year || currentYear
+        normalizedData.push({
+            ...item,
+            year: item.year || currentYear
+        });
+
+        prevMonth = month;
     });
 
-    prevMonth = month;
-});
     const sortedData = [...normalizedData].sort((a, b) => {
         if (a.year !== b.year) return a.year - b.year;
         return a.month - b.month;
@@ -297,6 +309,51 @@ SCHEDULE_DATA.forEach((item) => {
 
     board.innerHTML = sortedData.map(renderScheduleCard).join("");
 }
+
+function getScheduleFormOptions() {
+    if (typeof SCHEDULE_DATA === "undefined") return [];
+
+    const normalizedData = [];
+    let currentYear = START_YEAR;
+    let prevMonth = 0;
+
+    SCHEDULE_DATA.forEach((item) => {
+        const month = Number(item.month);
+
+        if (prevMonth && month < prevMonth) {
+            currentYear += 1;
+        }
+
+        const year = item.year || currentYear;
+
+        const states = [
+            hasSection(item.regular) ? getSectionState(item.regular, "regular") : null,
+            hasSection(item.event) ? getSectionState(item.event, "event") : null,
+            hasSection(item.collab) ? getSectionState(item.collab, "collab") : null
+        ].filter(Boolean);
+
+        const cardStatus = getCardStatus(states);
+
+        normalizedData.push({
+            year,
+            month,
+            status: cardStatus,
+            regular: item.regular || null,
+            event: item.event || null,
+            collab: item.collab || null,
+            memo: item.memo || ""
+        });
+
+        prevMonth = month;
+    });
+
+    return normalizedData.sort((a, b) => {
+        if (a.year !== b.year) return a.year - b.year;
+        return a.month - b.month;
+    });
+}
+
+window.getScheduleFormOptions = getScheduleFormOptions;
 
 document.addEventListener("DOMContentLoaded", renderSchedule);
 

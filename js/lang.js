@@ -44,6 +44,7 @@ window.LANG_DATA = {
             slot_event_closed: "이벤트 마감",
             slot_available_singular: "1 슬롯 남음",
             slot_available_plural_suffix: "슬롯 남음",
+              legend_collab: "협업",
 
             legend_open: "예약 가능",
             legend_closed: "예약 마감",
@@ -81,7 +82,8 @@ window.LANG_DATA = {
 
             legend_open: "Open",
             legend_closed: "Closed",
-            legend_event_closed: "Event Closed"
+            legend_event_closed: "Event Closed",
+            legend_collab: "Collab",
         }
     },
 
@@ -97,8 +99,8 @@ window.LANG_DATA = {
 <br>기간은 작업 내용과 컨펌에 따라 유동적으로 달라집니다.`,
             n3: `<span class="bold">모든 일러스트의 가격은 최소 금액</span>이며,
 작업 난이도에 따라 <span class="bold">추가금이 발생</span>할 수 있습니다.`,
-            n4: `작업 예약 파기 시 <span class="bold">전체 금액의 10% 위약금이 발생</span>합니다.`,
-            n5: `견적가 안내 후 <span class="bold">48시간 내에 예약금 미입금 시 슬롯은 자동 취소</span>되며,<br>
+            n4: `<span class="bold">예약 슬롯 확정을 위해 총 견적 금액의 10%를 예약금으로 입금</span>해 주셔야하며, 예약금은 신청 취소 시 환불이 불가합니다.`,
+            n5: `견적가 안내 후 <span class="bold">24시간 내에 예약금 미입금 시 슬롯은 자동 취소</span>되며,<br>
 다음 예약자분께 차례가 넘어갑니다.`,
             n6: `모든 작업물은 <span class="bold">작가의 포트폴리오로 사용되며 작업 완료일 이후 공개</span>됩니다.`,
             n7: `불가능하다고 판단되는 작업은 거절될 수 있습니다.`,
@@ -115,7 +117,9 @@ window.LANG_DATA = {
             td_1: `없음`,
             td_2: `30만원`,
             td_3: `100만원`,
-            text_tb: `모델 양도 및 재판매 시에는 문의 부탁드립니다.`
+            text_tb: `모델 양도 및 재판매 시에는 문의 부탁드립니다.`,
+            apply_cta_btn: `신청폼으로 이동하기 <span class="arrow">&#8594;</span>`,
+            apply_cta_text:'버튼을 누르면 신청폼으로 이동합니다. ',
         },
         en: {
             notice_title: "Notice",
@@ -128,26 +132,28 @@ window.LANG_DATA = {
 <br>This may vary depending on the complexity of the request and the feedback process.`,
             n3: `All listed illustration prices are <span class="bold">base prices</span>,
 and <span class="bold">additional charges may apply</span> depending on the difficulty of the work.`,
-            n4: `If a reservation is canceled, <span class="bold">a cancellation fee of 10% of the total amount will be charged.</span>`,
-            n5: `<span class="bold">If the deposit is not paid within 48 hours</span> after the quote is provided,
+            n4: `<span class="bold">A 10% non-refundable deposit is required to confirm your booking.</span> Deposits are not eligible for a refund in the event of a cancellation.`,
+            n5: `<span class="bold">If the deposit is not paid within 24 hours</span> after the quote is provided,
 the slot will be <span class="bold">automatically canceled</span> and offered to the next person.`,
             n6: `All completed works may be <span class="bold">used in the artist's portfolio</span>
 and will be <span class="bold">published after the completion date.</span>`,
             n7: `Requests that are considered impossible or unsuitable may be declined.`,
             t_c: `Usage Scope`,
-            th_1: `Streaming`,
-            th_2: `Personal<br>Copyright Purchase`,
+            th_1: `Live Streaming`,
+            th_2: `Individual<br>Copyright Purchase`,
             th_3: `Corporate<br>Copyright Purchase`,
             th_4: `Additional Fee`,
-            th_5: `YouTube /<br>Live Streaming`,
-            th_6: `Design Editing<br>by Another Artist`,
+            th_5: `YouTube Upload & <br> Live Stream`,
+            th_6: `Commissioning <br> Other Artist`,
             th_7: `3D Production`,
             th_8: `Merchandise Production`,
             th_9: `Corporate Use`,
             td_1: `None`,
-            td_2: `300,000 KRW`,
-            td_3: `1,000,000 KRW`,
-            text_tb: `Please contact me in advance for model transfer or resale.`
+            td_2: `KRW 300,000`,
+            td_3: `KRW 1,000,000 `,
+            text_tb: `Please contact me in advance for model transfer or resale.`,
+             apply_cta_btn: `Apply Now <span class="arrow">&#8594;</span>`,
+               apply_cta_text: "Click the button to go to the application form."
         }
     },
 
@@ -155,7 +161,7 @@ and will be <span class="bold">published after the completion date.</span>`,
         ko: {
             price_title: "가격안내",
             price_subtitle: "옵션사항",
-
+  price_guide: "타입 카드를 클릭 시 해당 타입 포트폴리오로 이동합니다.",
             basic_title: "베이직 타입",
             basic_price: `<span class="blue_p">반신 ▶</span> 600,000 원 <br><span class="blue_p">전신 ▶</span> 800,000 원`,
             basic_desc: `파츠 분리 일러스트 (리깅x)
@@ -221,23 +227,23 @@ and will be <span class="bold">published after the completion date.</span>`,
             refund_5: '판매모델 미사용 : 환불 가능',
             refund_6: '판매모델 사용 후 : 환불 불가',
             refund_title: '환불안내',
-            apply_cta_btn: `신청하러 가기 <span class="arrow">&#8594;</span>`,
+            apply_cta_btn: `신청폼으로 이동하기 <span class="arrow">&#8594;</span>`,
             apply_cta_text: "버튼을 누르면 신청폼으로 이동합니다. "
         },
 
         en: {
             price_title: "Price",
             price_subtitle: "Options",
-
+price_guide: "Click a type card to view its portfolio.",
             basic_title: "Basic Type",
-            basic_price: `<span class="blue_p">Half-body ▶</span> 600,000 KRW <br><span class="blue_p">Full-body ▶</span> 800,000 KRW`,
+            basic_price: `<span class="blue_p">Half-body ▶</span> KRW 600,000<br><span class="blue_p">Full-body ▶</span> KRW 800,000 `,
             basic_desc: `Separated parts illustration (No rigging)
 <br>2 design drafts provided <br> <span class="mobile-break">5 basic expressions included</span>`,
             basic_point1: `Clean and light cel-style coloring is applied.`,
             basic_point2: `Essential parts separation is done efficiently,<br>so you can receive the final work in a shorter time.`,
 
             premium_title: "Premium Type",
-            premium_price: `<span class="pink_p">Half-body ▶</span> 900,000 KRW <br><span class="pink_p">Full-body ▶</span> 1,300,000 KRW`,
+            premium_price: `<span class="pink_p">Half-body ▶</span>KRW 900,000<br><span class="pink_p">Full-body ▶</span> KRW 1,300,000 `,
             premium_desc: `Separated parts illustration (No rigging)
 <br>3 design drafts provided <br> <span class="mobile-break">5 basic expressions included</span>`,
             premium_point1: `Detailed and rich coloring is applied.`,
@@ -346,7 +352,64 @@ and will be <span class="bold">published after the completion date.</span>`,
             apply_cta_btn: `Apply Now <span class="arrow">&#8594;</span>`,
             apply_cta_text: "Click the button to go to the application form."
         }
+    },
+    contact: {
+    ko: {
+        contact_title: "신청폼",
+        contact_head_text: "아래 버튼으로 신청 양식을 복사한 뒤, 원하시는 메일 내용과 함께 자유롭게 작성해서 보내주세요.",
+        contact_schedule_title: "현재 예약 슬롯",
+
+        contact_method_title: "신청 방법",
+        contact_step1_title: "신청 양식 복사",
+        contact_step1_desc: "버튼을 눌러 신청 양식 템플릿을 복사해주세요.",
+        contact_step2_title: "내용 작성",
+        contact_step2_desc: "복사한 양식을 메일에 붙여넣고 내용을 작성해주세요.",
+        contact_step3_title: "메일 발송",
+        contact_step3_desc: "아래 메일주소로 신청서를 보내주세요.<br><span class=\"contact-step-mail\">csay0108@naver.com</span>",
+
+        contact_notice_text: "보내주신 신청서는 48시간 이내로 검토 후 견적 안내 메일을 발송해 드립니다.<br>견적 안내 후 24시간 이내에 예약금 입금이 확인되지 않을 경우, 슬롯은 자동으로 취소됩니다.",
+        contact_flow_title: "전체 결제 진행 순서",
+        contact_flow_desc: "예약금 10% 입금 ▶ 작업 시작 전 40% 입금 ▶ 작업 완료 후 50% 입금",
+        contact_flow_sub: "(완성된 파일은 전액 입금 완료 후 전달드립니다.)",
+
+        contact_template_title: "복사되는 신청 양식",
+        contact_copy_template: "신청 양식 복사하기",
+        contact_copy_email: "메일주소 복사하기",
+
+        legend_open: "예약 가능",
+        legend_closed: "예약 마감",
+        legend_event_closed: "이벤트 예약 마감",
+        legend_collab: "협업"
+    },
+
+    en: {
+        contact_title: "Contact",
+        contact_head_text: "Copy the application template below and send it via email with your details.",
+        contact_schedule_title: "Current Schedule",
+
+        contact_method_title: "How to Apply",
+        contact_step1_title: "Copy the template",
+        contact_step1_desc: "Click the button to copy the application template.",
+        contact_step2_title: "Write your details",
+        contact_step2_desc: "Paste the template into your email and fill it out.",
+        contact_step3_title: "Send the email",
+        contact_step3_desc: "Please send your application to the email address below.<br><span class=\"contact-step-mail\">csay0108@naver.com</span>",
+
+        contact_notice_text: "We will review your application within 48 hours and send you a quotation via email. <br>Please note that your slot will be automatically canceled if the deposit is not received within 24 hours of the quotation being sent.",
+        contact_flow_title: "The payment process is as follows:",
+        contact_flow_desc: "10% deposit ▶ 40% before work ▶ 50% after completion",
+        contact_flow_sub: "(The final files will be delivered once the full payment has been settled.)",
+
+        contact_template_title: "Application Template",
+        contact_copy_template: "Copy Template",
+        contact_copy_email: "Copy Email",
+
+        legend_open: "Open",
+        legend_closed: "Closed",
+        legend_event_closed: "Event Closed",
+        legend_collab: "Collab"
     }
+},
 };
 
 $(document).ready(function () {
@@ -400,12 +463,12 @@ $(document).ready(function () {
             });
         },
 
-        applyPage(lang) {
-            const page = $("body").data("page");
-            if (!page || !LANG_DATA[page]) return;
+applyPage(lang) {
+    const page = $("body").data("page");
+    if (!page || !LANG_DATA[page]) return;
 
-            this.apply(LANG_DATA[page], "[data-page-key]", lang);
-        }
+    this.apply(LANG_DATA[page], "[data-page-key], [data-key]", lang);
+}
     };
 
     function setActiveMenu() {

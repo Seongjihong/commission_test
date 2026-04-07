@@ -3,40 +3,44 @@ $(document).ready(function () {
         basic: [
             {
                 src: "./img/portfolio/b_type1.png",
-                titleKo: "베이직 샘플 01",
-                titleEn: "Basic Sample 01",
-                descKo: "깔끔한 셀식 채색과 가벼운 구성이 돋보이는 베이직 타입 작업물입니다.",
-                descEn: "A basic type sample featuring clean cel-style coloring and a light overall composition."
+                titleKo: "치지직 / 하나린 미르님",
+                titleEn: "CHZZK / Hanalin Mir",
+                // descKo: "치지직 / 하나린 미르님의 베이직 타입 작업샘플입니다 ",
+                // descEn: "A basic type sample featuring clean cel-style coloring and a light overall composition."
             },
             {
                 src: "./img/portfolio/b_type2.png",
-                titleKo: "베이직 샘플 02",
-                titleEn: "Basic Sample 02",
-                descKo: "빠른 파츠 분리 작업에 적합한 베이직 타입 샘플입니다.",
-                descEn: "A basic type sample suitable for efficient parts separation work."
+                titleKo: "치지직 / 도이루님",
+                titleEn: "CHZZK / Doiru",
+                // descKo: "빠른 파츠 분리 작업에 적합한 베이직 타입 샘플입니다.",
+                // descEn: "A basic type sample suitable for efficient parts separation work."
             }
         ],
         premium: [
             {
                 src: "./img/portfolio/p_type1.png",
-                titleKo: "프리미엄 샘플 01",
-                titleEn: "Premium Sample 01",
-                descKo: "디테일하고 밀도 높은 채색 표현이 강조된 프리미엄 타입 작업물입니다.",
-                descEn: "A premium type sample focused on rich detail and dense rendering."
+                    titleKo: "판매 모델",
+    titleEn: "sales model",
+    descKo: "",
+    descEn: "",
+    modalDescKo: "프리미엄 일러스트 + 풀옵션 리깅 + \nSD 일러스트 (리깅완료) + 삼면도 포함\n\n250만원\n\n일러스트: 철수\n리깅: 바다님 (작업중) ",
+    modalDescEn: "Premium Illustration +\n Full Option Rigging +\nSD Illustration (Rigged) + Turnaround Included\n\nKRW 2,500,000\n\nIllustration: Cheolsu\nRigging: Bada (In Progress)",
+    showDesc: true
             },
+
             {
                 src: "./img/portfolio/p_type2.png",
-                titleKo: "프리미엄 샘플 02",
-                titleEn: "Premium Sample 02",
-                descKo: "풍부한 파츠 구성과 높은 완성도를 보여주는 프리미엄 샘플입니다.",
-                descEn: "A premium sample that showcases rich part composition and a polished finish."
+                titleKo: "치지직 / 미나토 히토리님",
+                titleEn: "CHZZK / Minato Hitori",
+                // descKo: "풍부한 파츠 구성과 높은 완성도를 보여주는 프리미엄 샘플입니다.",
+                // descEn: "A premium sample that showcases rich part composition and a polished finish."
             },
             {
                 src: "./img/portfolio/p_type3.png",
-                titleKo: "프리미엄 샘플 03",
-                titleEn: "Premium Sample 03",
-                descKo: "고가동과 섬세한 표현을 중점으로 한 프리미엄 작업물입니다.",
-                descEn: "A premium work focused on high mobility and delicate detail."
+                titleKo: "트위치 / 토라치 키요님 ",
+                titleEn: "Twitch / Torachi Kiyo",
+                // descKo: "고가동과 섬세한 표현을 중점으로 한 프리미엄 작업물입니다.",
+                // descEn: "A premium work focused on high mobility and delicate detail."
             }
         ]
     };
@@ -74,6 +78,15 @@ $(document).ready(function () {
 
     let currentType = "basic";
     let currentIndex = 0;
+
+    function getTypeFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        const type = params.get("type");
+
+        if (type === "premium") return "premium";
+        return "basic";
+    }
+
 
     function getLang() {
         return SiteLang.getLang();
@@ -131,17 +144,19 @@ $(document).ready(function () {
         const items = getCurrentItems();
 
         const html = items.map((item, index) => {
+            const showDesc = item.showDesc === true;
+
             return `
-                <article class="portfolio-item">
-                    <button type="button" class="portfolio-thumb" data-index="${index}">
-                        <img src="${item.src}" alt="${getDisplayTitle(item, lang)}">
-                    </button>
-                    <div class="portfolio-item-info">
-                        <h3>${getDisplayTitle(item, lang)}</h3>
-                        <p>${getDisplayDesc(item, lang)}</p>
-                    </div>
-                </article>
-            `;
+        <article class="portfolio-item ${showDesc ? "has-desc" : ""}">
+            <button type="button" class="portfolio-thumb" data-index="${index}">
+                <img src="${item.src}" alt="${getDisplayTitle(item, lang)}">
+            </button>
+            <div class="portfolio-item-info">
+                <h3>${getDisplayTitle(item, lang)}</h3>
+                <p>${getDisplayDesc(item, lang)}</p>
+            </div>
+        </article>
+    `;
         }).join("");
 
         $("#portfolioGrid").html(html);
@@ -155,24 +170,36 @@ $(document).ready(function () {
         renderGrid(lang);
     }
 
-    function updateModal() {
-        const lang = getLang();
-        const items = getCurrentItems();
-        const item = items[currentIndex];
-        const label = portfolioMeta[lang][currentType].label;
+function updateModal() {
+    const lang = getLang();
+    const items = getCurrentItems();
+    const item = items[currentIndex];
+    const label = portfolioMeta[lang][currentType].label;
 
-        $("#modalImage")
-            .attr("src", item.src)
-            .attr("alt", getDisplayTitle(item, lang));
+    $("#modalImage")
+        .attr("src", item.src)
+        .attr("alt", getDisplayTitle(item, lang));
 
-        $("#modalLabel")
-            .text(label)
-            .removeClass("basic premium")
-            .addClass(currentType);
+    $("#modalLabel")
+        .text(label)
+        .removeClass("basic premium")
+        .addClass(currentType);
 
-        $("#modalTitle").text(getDisplayTitle(item, lang));
-        $("#modalDesc").text(getDisplayDesc(item, lang));
+    $("#modalTitle").text(getDisplayTitle(item, lang));
+
+    let modalDesc = "";
+    if (lang === "ko") {
+        modalDesc = item.modalDescKo || item.descKo || "";
+    } else {
+        modalDesc = item.modalDescEn || item.descEn || "";
     }
+
+    if (item.showDesc) {
+        $("#modalDesc").text(modalDesc).show();
+    } else {
+        $("#modalDesc").text("").hide();
+    }
+}
 
     function openModal(index) {
         currentIndex = index;
@@ -237,5 +264,7 @@ $(document).ready(function () {
         }
     });
 
+    currentType = getTypeFromUrl();
     renderPortfolio(getLang());
 });
+
