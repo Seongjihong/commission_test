@@ -4,11 +4,12 @@
 }
 
 .contact-head {
+    padding-top: 130px;
     padding-bottom: 28px;
 }
 
 .contact-head-icon {
-    width: 42px;
+    width: 40px;
     margin: 0 auto 18px;
 }
 
@@ -26,6 +27,12 @@
     word-break: keep-all;
 }
 
+.page
+{
+    padding: 0;
+}
+
+
 .contact-layout {
     display: grid;
     grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
@@ -35,7 +42,7 @@
 
 .contact-card {
     border-radius: 32px;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.92);
     border: 1px solid rgba(185, 214, 234, 0.72);
     box-shadow: var(--shadow-md);
     backdrop-filter: blur(14px);
@@ -96,6 +103,15 @@
     color: var(--text-soft);
 }
 
+.contact-step-mail {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--sky-deep);
+    word-break: break-all;
+}
+
 .contact-notice {
     margin-top: 18px;
     padding: 18px;
@@ -144,22 +160,17 @@
 }
 
 .contact-schedule-section {
-   margin-bottom: 24px;
+    margin-bottom: 24px;
 }
 
 .contact-card--schedule {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 30px 28px;
 }
 
-.linked-schedule-list {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 6px;
-}
-
-.linked-schedule-list {
+.linkedScheduleInfo {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -169,9 +180,9 @@
 .linked-schedule-chip {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    min-height: 44px;
-    padding: 10px 14px;
+    gap: 10px;
+    min-height: 48px;
+    padding: 11px 16px;
     border-radius: 999px;
     background: #f7fbff;
     border: 1px solid #dbe7f1;
@@ -208,9 +219,9 @@
 }
 
 .linked-schedule-chip.closed {
-    background: #f9f2f4;
-    border-color: #ead1d8;
-    color: #b16a7b;
+    background: #f3f5f7;
+    border-color: #d8dee5;
+    color: #8a96a3;
 }
 
 .linked-schedule-empty {
@@ -220,39 +231,59 @@
 
 .contact-action-group {
     display: flex;
-    flex-direction: column;
     gap: 12px;
     margin-top: 24px;
 }
 
-.contact-mail-btn {
+.contact-btn {
+    flex: 1 1 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 58px;
-    padding: 0 24px;
+    min-height: 60px;
+    padding: 0 20px;
     border-radius: 999px;
-    background: #fff;
-    border: 1px solid #d7e7f2;
-    color: var(--sky-deep);
     font-size: 16px;
-    font-weight: 700;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    box-shadow: 0 10px 20px rgba(59, 166, 234, 0.08);
 }
 
-.contact-mail-btn:hover {
+.template-btn {
+    background: var(--sky);
+    color: #fff;
+    border: 1px solid var(--sky);
+}
+
+.template-btn:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-sm);
-    background: #fafdff;
+    background: var(--sky-deep);
+    border-color: var(--sky-deep);
+    box-shadow: 0 18px 28px rgba(59, 166, 234, 0.22);
+}
+
+.email-btn {
+    background: #fff;
+    color: var(--sky-deep);
+    border: 1.5px solid #b8d8ee;
+}
+
+.email-btn:hover {
+    transform: translateY(-2px);
+    background: #f2f9ff;
+    border-color: #8cc6ea;
+    box-shadow: 0 18px 28px rgba(59, 166, 234, 0.14);
 }
 
 .contact-copy-note {
-    min-height: 26px;
-    margin-top: 14px;
-    font-size: 14px;
+    min-height: 30px;
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: 800;
     color: var(--sky-deep);
-    font-weight: 700;
     text-align: center;
+    line-height: 1.5;
 }
 
 .template-box {
@@ -277,6 +308,64 @@ html[data-lang="en"] #templatePreview {
     display: block;
 }
 
+.slot-diamonds {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 6px;
+}
+
+.slot-diamond {
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    border-radius: 2px;
+    flex: 0 0 auto;
+}
+
+/* 채워진 슬롯 */
+.slot-diamond.filled.regular {
+    background: #5a97d1;
+    border: 1px solid #5a97d1;
+}
+
+.slot-diamond.filled.event {
+    background: #e4b2ba;
+    border: 1px solid #e4b2ba;
+}
+
+.slot-diamond.filled.collab {
+    background: #ffd84d;
+    border: 1px solid #ffd84d;
+}
+
+/* 빈 슬롯 */
+.slot-diamond.empty {
+    background: #fff;
+    border-width: 1.5px;
+    border-style: solid;
+}
+
+.slot-diamond.empty.regular {
+    border-color: #2f6fa8;
+}
+
+.slot-diamond.empty.event {
+    border-color: #c27c87;
+}
+
+.slot-diamond.empty.collab {
+    border-color: #caa100;
+}
+
+/* 오픈 예정 / 마감은 다이아 안 보이도록 contact.js에서 처리하지만, 혹시 남아있으면 회색 */
+.linked-schedule-chip.upcoming .slot-diamond,
+.linked-schedule-chip.closed .slot-diamond {
+    background: #e0e0e0 !important;
+    border-color: #bdbdbd !important;
+    opacity: 0.6;
+}
+
 @media (max-width: 1200px) {
     .contact-layout {
         grid-template-columns: 1fr;
@@ -288,7 +377,8 @@ html[data-lang="en"] #templatePreview {
 }
 
 @media (max-width: 1024px) {
-    .contact-card {
+    .contact-card,
+    .contact-card--schedule {
         padding: 26px 22px;
         border-radius: 26px;
     }
@@ -302,10 +392,16 @@ html[data-lang="en"] #templatePreview {
         font-size: 14px;
         line-height: 1.85;
     }
+
+    .contact-btn {
+        min-height: 58px;
+        font-size: 15px;
+    }
 }
 
 @media (max-width: 768px) {
-    .contact-card {
+    .contact-card,
+    .contact-card--schedule {
         padding: 22px 18px;
         border-radius: 22px;
     }
@@ -329,108 +425,32 @@ html[data-lang="en"] #templatePreview {
     .contact-step-list p,
     .template-box pre,
     .notice-text,
-    .flow-desc {
+    .flow-desc,
+    .contact-step-mail {
         font-size: 14px;
     }
 
-    .contact-mail-btn,
-    .apply-cta__btn {
-        min-height: 54px;
+    .contact-action-group {
+        gap: 10px;
+    }
+
+    .contact-btn {
+        min-height: 56px;
+        padding: 0 14px;
+        font-size: 14px;
+    }
+
+    .contact-copy-note {
         font-size: 15px;
     }
-}
 
-@media (max-width: 1024px) {
-    .contact-card--schedule {
-        padding: 26px 22px;
-    }
-}
-
-@media (max-width: 768px) {
-    .contact-schedule-section {
-        margin-top: 18px;
+    .slot-diamonds {
+        gap: 6px;
+        margin-left: 4px;
     }
 
-    .contact-card--schedule {
-        padding: 22px 18px;
+    .slot-diamond {
+        width: 9px;
+        height: 9px;
     }
 }
-
-.slot-diamonds {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-left: 6px;
-}
-
-.slot-diamond {
-      width: 10px;
-    height: 10px;
-    transform: rotate(45deg);
-    border-radius: 2px;
-    flex: 0 0 auto;
-}
-
-
-/* 일반 */
-.slot-diamond.filled.regular {
-    background: #5a97d1;
-    border: 1px solid #5a97d1;
-}
-
-/* 이벤트 */
-.slot-diamond.filled.event {
-    background: #e4b2ba;
-    border: 1px solid #e4b2ba;
-}
-
-/* 협업 (노란색 ⭐) */
-.slot-diamond.filled.collab {
-    background: #ffd84d;
-    border: 1px solid #ffd84d;
-}
-
-.slot-diamond.empty.regular {
-    border-color: #2f6fa8;
-}
-
-.slot-diamond.empty.event {
-    border-color: #c27c87;
-}
-
-.slot-diamond.empty.collab {
-    border-color: #caa100;
-}
-
-/* ===== 오픈 예정 / 마감 → 전체 회색 처리 ===== */
-
-.linked-schedule-chip.upcoming .slot-diamond,
-.linked-schedule-chip.closed .slot-diamond {
-    background: #e0e0e0 !important;
-    border-color: #bdbdbd !important;
-}
-
-/* empty도 동일하게 */
-.linked-schedule-chip.upcoming .slot-diamond.empty,
-.linked-schedule-chip.closed .slot-diamond.empty {
-    background: #f5f5f5 !important;
-    border-color: #cfcfcf !important;
-}
-
-.linked-schedule-chip.upcoming .slot-diamond,
-.linked-schedule-chip.closed .slot-diamond {
-    opacity: 0.6;
-}
-
-/* ===== 마감 상태 → 다이아 회색 ===== */
-.linked-schedule-chip.closed .slot-diamond {
-    background: #e0e0e0 !important;
-    border-color: #bdbdbd !important;
-}
-
-/* empty도 같이 */
-.linked-schedule-chip.closed .slot-diamond.empty {
-    background: #f5f5f5 !important;
-    border-color: #cfcfcf !important;
-}
-

@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/Paperlogy.css" type="text/css">
 </head>
 
-<body  data-page="contact">
+<body data-page="contact">
     <header>
         <div class="header_inner">
             <div class="logo">
@@ -65,110 +65,112 @@
         </div>
     </header>
 
-<main class="contact-page page">
-    <section class="page-head contact-head">
-        <div class="inner">
-            <div class="contact-head-icon">
-                <img src="./img/portfolio_icon.svg" alt="신청폼 아이콘">
+    <main class="contact-page page">
+        <section class="page-head contact-head">
+            <div class="inner">
+                <div class="contact-head-icon">
+                    <img src="./img/portfolio_icon.svg" alt="신청폼 아이콘">
+                </div>
+                <h1 class="page-title" data-key="contact_title">신청폼</h1>
+                <p class="contact-head-text" data-key="contact_head_text">
+                    아래 버튼으로 신청 양식을 복사한 뒤, 원하시는 메일 내용과 함께 자유롭게 작성해서 보내주세요.
+                </p>
             </div>
-            <h1 class="page-title" data-key="contact_title">신청폼</h1>
-            <p class="contact-head-text" data-key="contact_head_text">
-                아래 버튼으로 신청 양식을 복사한 뒤, 원하시는 메일 내용과 함께 자유롭게 작성해서 보내주세요.
-            </p>
-        </div>
-    </section>
+        </section>
 
-    <section class="page-body">
-        <div class="inner">
-                        <section class="contact-schedule-section">
-                <article class="contact-card contact-card--schedule">
-                    <div class="section-head">
-                        <h2 data-key="contact_schedule_title">현재 예약 슬롯</h2>
-                    </div>
-                                     <div class="schedule-legend">
-    <span class="legend-item">
-        <i class="legend-dot is-open"></i>
-        <span data-page-key="legend_open">예약 가능</span>
-    </span>
-    <span class="legend-divider">|</span>
-    <span class="legend-item">
-        <i class="legend-dot is-closed"></i>
-        <span data-page-key="legend_closed">예약 마감</span>
-    </span>
-    <span class="legend-divider">|</span>
-    <span class="legend-item">
-        <i class="legend-dot is-event-closed"></i>
-        <span data-page-key="legend_event_closed">이벤트 예약 마감</span>
-    </span>
-    <span class="legend-divider">|</span>
-    <span class="legend-item">
-         <i class="legend-dot is-collab-closed"></i>
-    <span data-page-key="legend_collab">협업</span>
-    </span>
-</div>
+        <section class="page-body">
+            <div class="inner">
+                <section class="contact-schedule-section">
+                    <article class="contact-card contact-card--schedule">
+                        <div class="section-head">
+                            <h2 data-page-key="contact_schedule_title">현재 예약 슬롯</h2>
+                        </div>
 
-                    <div id="linkedScheduleInfo" class="linked-schedule-list"></div>
-                </article>
-            </section>
-            <div class="contact-layout">
-                <article class="contact-card contact-card--main">
-                    <div class="section-head">
-                        <h2 data-key="contact_method_title">신청 방법</h2>
-                    </div>
+                        <div class="schedule-legend">
+                            <span class="legend-item">
+                                <i class="legend-dot is-open"></i>
+                                <span data-page-key="legend_open">예약 가능</span>
+                            </span>
+                            <span class="legend-divider">|</span>
+                            <span class="legend-item">
+                                <i class="legend-dot is-closed"></i>
+                                <span data-page-key="legend_closed">예약 마감</span>
+                            </span>
+                            <span class="legend-divider">|</span>
+                            <span class="legend-item">
+                                <i class="legend-dot is-event-closed"></i>
+                                <span data-page-key="legend_event_closed">이벤트 예약 마감</span>
+                            </span>
+                            <span class="legend-divider">|</span>
+                            <span class="legend-item">
+                                <i class="legend-dot is-collab-closed"></i>
+                                <span data-page-key="legend_collab">협업</span>
+                            </span>
+                        </div>
 
-                    <div class="contact-guide">
-                        <ol class="contact-step-list">
-                            <li>
-                                <span class="step-num">01</span>
-                                <div>
-                                    <strong data-key="contact_step1_title">신청 양식 복사</strong>
-                                    <p data-key="contact_step1_desc">버튼을 눌러 신청 양식 템플릿을 복사해주세요.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="step-num">02</span>
-                                <div>
-                                    <strong data-key="contact_step2_title">내용 작성</strong>
-                                    <p data-key="contact_step2_desc">복사한 양식을 메일에 붙여넣고 내용을 작성해주세요.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="step-num">03</span>
-                                <div>
-                                    <strong data-key="contact_step3_title">메일 발송</strong>
-                                       <p data-key="contact_step3_desc">
-            아래 메일주소로 신청서를 보내주세요.<br>
-            <span class="contact-step-mail">csay0108@naver.com</span>
-            </p>
-                                </div>
-                            </li>
-                        </ol>
+                        <div id="linkedScheduleInfo" class="linkedScheduleInfo"></div>
+                    </article>
+                </section>
 
-                        <div class="contact-notice">
-                            <p class="notice-text" data-key="contact_notice_text">
-                                보내주신 신청서는 48시간 이내로 검토 후 견적 안내 메일을 발송해 드립니다.<br>
-                                견적 안내 후 24시간 이내에 예약금 입금이 확인되지 않을 경우, 슬롯은 자동으로 취소됩니다.
-                            </p>
+                <div class="contact-layout">
+                    <article class="contact-card contact-card--main">
+                        <div class="section-head">
+                            <h2 data-page-key="contact_method_title">신청 방법</h2>
+                        </div>
 
-                            <div class="payment-flow">
-                                <p class="flow-title" data-key="contact_flow_title">전체 결제 진행 순서</p>
-                                <p class="flow-desc" data-key="contact_flow_desc">
-                                    예약금 10% 입금 ▶ 작업 시작 전 40% 입금 ▶ 작업 완료 후 50% 입금
+                        <div class="contact-guide">
+                            <ol class="contact-step-list">
+                                <li>
+                                    <span class="step-num">01</span>
+                                    <div>
+                                        <strong data-page-key="contact_step1_title">신청 양식 복사</strong>
+                                        <p data-page-key="contact_step1_desc">버튼을 눌러 신청 양식 템플릿을 복사해주세요.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="step-num">02</span>
+                                    <div>
+                                        <strong data-page-key="contact_step2_title">내용 작성</strong>
+                                        <p data-page-key="contact_step2_desc">복사한 양식을 메일에 붙여넣고 내용을 작성해주세요.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="step-num">03</span>
+                                    <div>
+                                        <strong data-page-key="contact_step3_title">메일 발송</strong>
+                                        <p data-page-key="contact_step3_desc">
+                                            아래 메일주소로 신청서를 보내주세요.<br>
+                                            <span class="contact-step-mail">csay0108@naver.com</span>
+                                        </p>
+                                    </div>
+                                </li>
+                            </ol>
+
+                            <div class="contact-notice">
+                                <p class="notice-text" data-page-key="contact_notice_text">
+                                    보내주신 신청서는 48시간 이내로 검토 후 견적 안내 메일을 발송해 드립니다.<br>
+                                    견적 안내 후 24시간 이내에 예약금 입금이 확인되지 않을 경우, 슬롯은 자동으로 취소됩니다.
                                 </p>
-                                <p class="flow-sub" data-key="contact_flow_sub">
-                                    (완성된 파일은 전액 입금 완료 후 전달드립니다.)
-                                </p>
+
+                                <div class="payment-flow">
+                                    <p class="flow-title" data-page-key="contact_flow_title">전체 결제 진행 순서</p>
+                                    <p class="flow-desc" data-page-key="contact_flow_desc">
+                                        예약금 10% 입금 ▶ 작업 시작 전 40% 입금 ▶ 작업 완료 후 50% 입금
+                                    </p>
+                                    <p class="flow-sub" data-page-key="contact_flow_sub">
+                                        (완성된 파일은 전액 입금 완료 후 전달드립니다.)
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                </article>
-                <article class="contact-card contact-card--template">
-                    <div class="section-head">
-                        <h2 data-key="contact_template_title">복사되는 신청 양식</h2>
-                    </div>
+                    <article class="contact-card contact-card--template">
+                        <div class="section-head">
+                            <h2 data-page-key="contact_template_title">복사되는 신청 양식</h2>
+                        </div>
 
-                    <div class="template-box">
+                        <div class="template-box">
 <pre id="templatePreview">1. 방송 닉네임 / 데뷔 플랫폼
 
 2. 신청 내용 / 작업 타입 / 개인세 or 기업세
@@ -191,30 +193,32 @@
 (추가 요청 사항이 있을 시 기입해주세요.)
 
 8. 컨펌을 위한 연락수단 (디스코드, 이메일)</pre>
-                    </div>
-                         <div class="contact-action-group">
-                        <button type="button" class="contact-mail-btn" id="copyTemplateBtn" data-key="contact_copy_template">
-        신청 양식 복사하기
-    </button>
+                        </div>
 
-                        <button type="button" class="contact-mail-btn" id="copyEmailBtn" data-key="contact_copy_email">
-                            메일주소 복사하기
-                        </button>
-                    </div>
-                                        <p class="contact-copy-note" id="copyMessage" aria-live="polite"></p>
-                </article>
+                        <div class="contact-action-group">
+                            <button type="button" class="contact-btn template-btn" id="copyTemplateBtn" data-page-key="contact_copy_template">
+                                신청 양식 복사하기
+                            </button>
+
+                            <button type="button" class="contact-btn email-btn" id="copyEmailBtn" data-page-key="contact_copy_email">
+                                메일주소 복사하기
+                            </button>
+                        </div>
+
+                        <p class="contact-copy-note" id="copyMessage" aria-live="polite"></p>
+                    </article>
+                </div>
             </div>
+        </section>
+    </main>
 
-
-        </div>
-    </section>
-</main>
     <footer>
         <div class="footerin">
             <p>© CHEOLSU. All Rights Reserved.</p>
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/lang.js"></script>
     <script src="./js/schedule.data.js"></script>

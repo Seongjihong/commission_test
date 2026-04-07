@@ -15,7 +15,7 @@ window.LANG_DATA = {
     },
 
     index: {
-             ko: {
+        ko: {
             schedule_sub: "월별 슬롯 현황을 확인하고 문의해 주세요.",
             schedule_note: "문의 전 공지사항과 가격안내를 먼저 확인해 주세요.",
             x_button: "X 바로가기",
@@ -44,7 +44,7 @@ window.LANG_DATA = {
             slot_event_closed: "이벤트 마감",
             slot_available_singular: "1 슬롯 남음",
             slot_available_plural_suffix: "슬롯 남음",
-              legend_collab: "협업",
+            legend_collab: "협업",
 
             legend_open: "예약 가능",
             legend_closed: "예약 마감",
@@ -119,7 +119,7 @@ window.LANG_DATA = {
             td_3: `100만원`,
             text_tb: `모델 양도 및 재판매 시에는 문의 부탁드립니다.`,
             apply_cta_btn: `신청폼으로 이동하기 <span class="arrow">&#8594;</span>`,
-            apply_cta_text:'버튼을 누르면 신청폼으로 이동합니다. ',
+            apply_cta_text: '버튼을 누르면 신청폼으로 이동합니다. ',
         },
         en: {
             notice_title: "Notice",
@@ -152,8 +152,8 @@ and will be <span class="bold">published after the completion date.</span>`,
             td_2: `KRW 300,000`,
             td_3: `KRW 1,000,000 `,
             text_tb: `Please contact me in advance for model transfer or resale.`,
-             apply_cta_btn: `Apply Now <span class="arrow">&#8594;</span>`,
-               apply_cta_text: "Click the button to go to the application form."
+            apply_cta_btn: `Apply Now <span class="arrow">&#8594;</span>`,
+            apply_cta_text: "Click the button to go to the application form."
         }
     },
 
@@ -161,7 +161,7 @@ and will be <span class="bold">published after the completion date.</span>`,
         ko: {
             price_title: "가격안내",
             price_subtitle: "옵션사항",
-  price_guide: "타입 카드를 클릭 시 해당 타입 포트폴리오로 이동합니다.",
+            price_guide: "타입 카드를 클릭 시 해당 타입 포트폴리오로 이동합니다.",
             basic_title: "베이직 타입",
             basic_price: `<span class="blue_p">반신 ▶</span> 600,000 원 <br><span class="blue_p">전신 ▶</span> 800,000 원`,
             basic_desc: `파츠 분리 일러스트 (리깅x)
@@ -219,6 +219,7 @@ and will be <span class="bold">published after the completion date.</span>`,
             side_expression: "표정샘플",
             side_process: "작업과정",
             side_refund: "환불안내",
+            side_extra_option: "추가옵션",
 
             refund_1: '작업 시작 전 : 90&#37;',
             refund_2: '디자인 러프 진행 도중 : 70&#37;',
@@ -228,13 +229,57 @@ and will be <span class="bold">published after the completion date.</span>`,
             refund_6: '판매모델 사용 후 : 환불 불가',
             refund_title: '환불안내',
             apply_cta_btn: `신청폼으로 이동하기 <span class="arrow">&#8594;</span>`,
-            apply_cta_text: "버튼을 누르면 신청폼으로 이동합니다. "
+            apply_cta_text: "버튼을 누르면 신청폼으로 이동합니다. ",
+
+            extra_option_title: "추가옵션",
+
+            opt_1: "디자인 시안 1종 추가",
+            opt_1_price: "50,000원",
+
+            opt_2: "표정 추가",
+            opt_2_price: "10,000원",
+
+            opt_3: "볼 빵빵 + 혀 메롱 표정 (브이브릿저 옵션)",
+            opt_3_price: "10,000원",
+
+            opt_9: "비대칭 포즈",
+            opt_9_price: "150,000원",
+
+            opt_11: "손 포즈 (손 하트, 브이 등)",
+            opt_11_price: "60,000원",
+
+            opt_12: "손 + 소품 (게임기, 마이크 등)",
+            opt_12_price: "80,000원",
+
+            opt_10: "장식, 꼬리, 동물귀, 뿔 등",
+            opt_10_price: "50,000원",
+
+            opt_4: "헤어 추가 (가슴 위)",
+            opt_4_price: "70,000원",
+
+            opt_5: "헤어 추가 (가슴 아래)",
+            opt_5_price: "120,000원",
+
+            opt_6: "신 의상 추가",
+            opt_6_price: "250,000원",
+
+            opt_7: "ON / OFF 의상 및 장식",
+            opt_7_price: "70,000원",
+
+            opt_8: "바디 (의상 없는 몸체) 추가",
+            opt_8_price: "100,000원",
+
+            opt_13: "복잡한 디자인이나 의상 추가금",
+            opt_13_price: "100,000원",
+
+            opt_14: "삼면도 추가 (단색)",
+            opt_14_price: "200,000원",
         },
 
         en: {
             price_title: "Price",
             price_subtitle: "Options",
-price_guide: "Click a type card to view its portfolio.",
+            price_guide: "Click a type card to view its portfolio.",
             basic_title: "Basic Type",
             basic_price: `<span class="blue_p">Half-body ▶</span> KRW 600,000<br><span class="blue_p">Full-body ▶</span> KRW 800,000 `,
             basic_desc: `Separated parts illustration (No rigging)
@@ -291,6 +336,7 @@ price_guide: "Click a type card to view its portfolio.",
             side_expression: "Expressions",
             side_process: "Process",
             side_refund: "Refund",
+            side_extra_option: "Extras",
 
             refund_title: 'Refund information',
             refund_1: 'Before work begins : 90&#37;',
@@ -300,7 +346,53 @@ price_guide: "Click a type card to view its portfolio.",
             refund_5: 'If the commercial model has not been used : Refund available',
             refund_6: 'If the commercial model has been used : No refunds',
             apply_cta_btn: `Apply Now <span class="arrow">&#8594;</span>`,
-            apply_cta_text: "Click the button to go to the application form."
+            apply_cta_text: "Click the button to go to the application form.",
+
+            extra_option_title: "Additional Options",
+
+            opt_1: "Additional Design Concept",
+            opt_1_price: "KRW 50,000",
+
+            opt_2: "Additional Expression",
+            opt_2_price: "KRW 10,000",
+
+            opt_3: "Puffy Cheeks + Tongue Out (VBridger)",
+            opt_3_price: "KRW 10,000",
+
+            opt_9: "Asymmetric Pose",
+            opt_9_price: "KRW 150,000",
+
+            opt_11: "Hand Pose (Heart, Peace, etc.)",
+            opt_11_price: "KRW 60,000",
+
+            opt_12: "Hand + Prop (Console, Mic, etc.)",
+            opt_12_price: "KRW 80,000",
+
+            opt_10: "Accessories (Tail, Animal Ears, Horns, etc.)",
+            opt_10_price: "KRW 50,000",
+
+            opt_4: "Additional Hairstyle (Above Chest)",
+            opt_4_price: "KRW 70,000",
+
+            opt_5: "Additional Hairstyle (Below Chest)",
+            opt_5_price: "KRW 120,000",
+
+            opt_6: "New Outfit",
+            opt_6_price: "KRW 250,000",
+
+            opt_7: "Toggleable Outfit/Acc",
+            opt_7_price: "KRW 70,000",
+
+            opt_8: "Naked Body Base",
+            opt_8_price: "KRW 100,000",
+
+            opt_13: "Complexity Surcharge",
+            opt_13_price: "KRW 100,000",
+
+            opt_14: "3-View Sheet (Flat)",
+            opt_14_price: "KRW 200,000",
+
+            
         }
     },
 
@@ -354,62 +446,62 @@ price_guide: "Click a type card to view its portfolio.",
         }
     },
     contact: {
-    ko: {
-        contact_title: "신청폼",
-        contact_head_text: "아래 버튼으로 신청 양식을 복사한 뒤, 원하시는 메일 내용과 함께 자유롭게 작성해서 보내주세요.",
-        contact_schedule_title: "현재 예약 슬롯",
+        ko: {
+            contact_title: "신청폼",
+            contact_head_text: "아래 버튼으로 신청 양식을 복사한 뒤, 원하시는 메일 내용과 함께 자유롭게 작성해서 보내주세요.",
+            contact_schedule_title: "현재 예약 슬롯",
 
-        contact_method_title: "신청 방법",
-        contact_step1_title: "신청 양식 복사",
-        contact_step1_desc: "버튼을 눌러 신청 양식 템플릿을 복사해주세요.",
-        contact_step2_title: "내용 작성",
-        contact_step2_desc: "복사한 양식을 메일에 붙여넣고 내용을 작성해주세요.",
-        contact_step3_title: "메일 발송",
-        contact_step3_desc: "아래 메일주소로 신청서를 보내주세요.<br><span class=\"contact-step-mail\">csay0108@naver.com</span>",
+            contact_method_title: "신청 방법",
+            contact_step1_title: "신청 양식 복사",
+            contact_step1_desc: "버튼을 눌러 신청 양식 템플릿을 복사해주세요.",
+            contact_step2_title: "내용 작성",
+            contact_step2_desc: "복사한 양식을 메일에 붙여넣고 내용을 작성해주세요.",
+            contact_step3_title: "메일 발송",
+            contact_step3_desc: "아래 메일주소로 신청서를 보내주세요.<br><span class=\"contact-step-mail\">csay0108@naver.com</span>",
 
-        contact_notice_text: "보내주신 신청서는 48시간 이내로 검토 후 견적 안내 메일을 발송해 드립니다.<br>견적 안내 후 24시간 이내에 예약금 입금이 확인되지 않을 경우, 슬롯은 자동으로 취소됩니다.",
-        contact_flow_title: "전체 결제 진행 순서",
-        contact_flow_desc: "예약금 10% 입금 ▶ 작업 시작 전 40% 입금 ▶ 작업 완료 후 50% 입금",
-        contact_flow_sub: "(완성된 파일은 전액 입금 완료 후 전달드립니다.)",
+            contact_notice_text: "보내주신 신청서는 48시간 이내로 검토 후 견적 안내 메일을 발송해 드립니다.<br>견적 안내 후 24시간 이내에 예약금 입금이 확인되지 않을 경우, 슬롯은 자동으로 취소됩니다.",
+            contact_flow_title: "전체 결제 진행 순서",
+            contact_flow_desc: "예약금 10% 입금 ▶ 작업 시작 전 40% 입금 ▶ 작업 완료 후 50% 입금",
+            contact_flow_sub: "(완성된 파일은 전액 입금 완료 후 전달드립니다.)",
 
-        contact_template_title: "복사되는 신청 양식",
-        contact_copy_template: "신청 양식 복사하기",
-        contact_copy_email: "메일주소 복사하기",
+            contact_template_title: "복사되는 신청 양식",
+            contact_copy_template: "신청 양식 복사하기",
+            contact_copy_email: "메일주소 복사하기",
 
-        legend_open: "예약 가능",
-        legend_closed: "예약 마감",
-        legend_event_closed: "이벤트 예약 마감",
-        legend_collab: "협업"
+            legend_open: "예약 가능",
+            legend_closed: "예약 마감",
+            legend_event_closed: "이벤트 예약 마감",
+            legend_collab: "협업"
+        },
+
+        en: {
+            contact_title: "Apply",
+            contact_head_text: "Copy the application template below and send it via email with your details.",
+            contact_schedule_title: "Current Schedule",
+
+            contact_method_title: "How to Apply",
+            contact_step1_title: "Copy the template",
+            contact_step1_desc: "Click the button to copy the application template.",
+            contact_step2_title: "Write your details",
+            contact_step2_desc: "Paste the template into your email and fill it out.",
+            contact_step3_title: "Send the email",
+            contact_step3_desc: "Please send your application to the email address below.<br><span class=\"contact-step-mail\">csay0108@naver.com</span>",
+
+            contact_notice_text: "We will review your application within 48 hours and send you a quotation via email. <br>Please note that your slot will be automatically canceled if the deposit is not received within 24 hours of the quotation being sent.",
+            contact_flow_title: "The payment process is as follows:",
+            contact_flow_desc: "10% deposit ▶ 40% before work ▶ 50% after completion",
+            contact_flow_sub: "(The final files will be delivered once the full payment has been settled.)",
+
+            contact_template_title: "Application Template",
+            contact_copy_template: "Copy Template",
+            contact_copy_email: "Copy Email",
+
+            legend_open: "Open",
+            legend_closed: "Closed",
+            legend_event_closed: "Event Closed",
+            legend_collab: "Collab"
+        }
     },
-
-    en: {
-        contact_title: "Contact",
-        contact_head_text: "Copy the application template below and send it via email with your details.",
-        contact_schedule_title: "Current Schedule",
-
-        contact_method_title: "How to Apply",
-        contact_step1_title: "Copy the template",
-        contact_step1_desc: "Click the button to copy the application template.",
-        contact_step2_title: "Write your details",
-        contact_step2_desc: "Paste the template into your email and fill it out.",
-        contact_step3_title: "Send the email",
-        contact_step3_desc: "Please send your application to the email address below.<br><span class=\"contact-step-mail\">csay0108@naver.com</span>",
-
-        contact_notice_text: "We will review your application within 48 hours and send you a quotation via email. <br>Please note that your slot will be automatically canceled if the deposit is not received within 24 hours of the quotation being sent.",
-        contact_flow_title: "The payment process is as follows:",
-        contact_flow_desc: "10% deposit ▶ 40% before work ▶ 50% after completion",
-        contact_flow_sub: "(The final files will be delivered once the full payment has been settled.)",
-
-        contact_template_title: "Application Template",
-        contact_copy_template: "Copy Template",
-        contact_copy_email: "Copy Email",
-
-        legend_open: "Open",
-        legend_closed: "Closed",
-        legend_event_closed: "Event Closed",
-        legend_collab: "Collab"
-    }
-},
 };
 
 $(document).ready(function () {
@@ -463,12 +555,12 @@ $(document).ready(function () {
             });
         },
 
-applyPage(lang) {
-    const page = $("body").data("page");
-    if (!page || !LANG_DATA[page]) return;
+        applyPage(lang) {
+            const page = $("body").data("page");
+            if (!page || !LANG_DATA[page]) return;
 
-    this.apply(LANG_DATA[page], "[data-page-key], [data-key]", lang);
-}
+            this.apply(LANG_DATA[page], "[data-page-key], [data-key]", lang);
+        }
     };
 
     function setActiveMenu() {
