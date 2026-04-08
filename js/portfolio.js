@@ -2,14 +2,14 @@ $(document).ready(function () {
     const portfolioData = {
         basic: [
             {
-                src: "./img/portfolio/b_type1.png",
+                src: "/img/portfolio/b_type1.png",
                 titleKo: "치지직 / 하나린 미르님",
                 titleEn: "CHZZK / Hanalin Mir",
                 // descKo: "치지직 / 하나린 미르님의 베이직 타입 작업샘플입니다 ",
                 // descEn: "A basic type sample featuring clean cel-style coloring and a light overall composition."
             },
             {
-                src: "./img/portfolio/b_type2.png",
+                src: "/img/portfolio/b_type2.png",
                 titleKo: "치지직 / 도이루님",
                 titleEn: "CHZZK / Doiru",
                 // descKo: "빠른 파츠 분리 작업에 적합한 베이직 타입 샘플입니다.",
@@ -18,25 +18,25 @@ $(document).ready(function () {
         ],
         premium: [
             {
-                src: "./img/portfolio/p_type1.png",
+                src: "/img/portfolio/p_type1.png",
                     titleKo: "판매 모델",
     titleEn: "sales model",
     descKo: "",
     descEn: "",
-    modalDescKo: "프리미엄 일러스트 + 풀옵션 리깅 + \nSD 일러스트 (리깅완료) + 삼면도 포함\n\n250만원\n\n일러스트: 철수\n리깅: 바다님 (작업중) ",
-    modalDescEn: "Premium Illustration +\n Full Option Rigging +\nSD Illustration (Rigged) + Turnaround Included\n\nKRW 2,500,000\n\nIllustration: Cheolsu\nRigging: Bada (In Progress)",
+    modalDescKo: "프리미엄 일러스트 + 풀옵션 리깅 + \nSD 일러스트 (리깅완료) + 삼면도 포함\n표정 5종 (홍조,하트눈,반짝눈,눈물,정색)+ \nIOS 기능 (볼빵빵&메롱) + \n 게임기&손 추가 파츠(실시간 트래킹 연동) + \n선글라스 & 겉옷 ON/OFF 포함\n\n250만원\n\n일러스트: 철수\n리깅: 바다님 (작업중) ",
+    modalDescEn: "Premium Illustration +\n Full Option Rigging +\nSD Illustration (Rigged) + Turnaround Included\n5 Expressions (Blush, Heart Eyes, Sparkle Eyes, Tears, Cold face) +\niOS Features (Puffy Cheeks & Tongue Out) +\n Game Console & Hand Parts (Real-time tracking linked) Sunglasses & Outerwear ON/OFF\n\nKRW 2,500,000\n\nIllustration: Cheolsu\nRigging: Bada (In Progress)",
     showDesc: true
             },
 
             {
-                src: "./img/portfolio/p_type2.png",
+                src: "/img/portfolio/p_type2.png",
                 titleKo: "치지직 / 미나토 히토리님",
                 titleEn: "CHZZK / Minato Hitori",
                 // descKo: "풍부한 파츠 구성과 높은 완성도를 보여주는 프리미엄 샘플입니다.",
                 // descEn: "A premium sample that showcases rich part composition and a polished finish."
             },
             {
-                src: "./img/portfolio/p_type3.png",
+                src: "/img/portfolio/p_type3.png",
                 titleKo: "트위치 / 토라치 키요님 ",
                 titleEn: "Twitch / Torachi Kiyo",
                 // descKo: "고가동과 섬세한 표현을 중점으로 한 프리미엄 작업물입니다.",

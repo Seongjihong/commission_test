@@ -1,7 +1,4 @@
-.contact-page {
-    display: block;
-    width: 100%;
-}
+
 
 .contact-head {
     padding-top: 130px;
@@ -27,8 +24,9 @@
     word-break: keep-all;
 }
 
-.page
-{
+.contact-page {
+    display: block;
+    width: 100%;
     padding: 0;
 }
 

@@ -1,74 +1,21 @@
 $(document).ready(function () {
-    function getSavedLang() {
-        return localStorage.getItem("lang") || "ko";
+
+    function normalizePath(path) {
+        return path.replace(/\/index\.html$/, "/").replace(/\/+$/, "/");
     }
-
-    function syncLangState(lang) {
-        const safeLang = lang === "en" ? "en" : "ko";
-
-        localStorage.setItem("lang", safeLang);
-        document.documentElement.setAttribute("data-lang", safeLang);
-
-        $("#ko, #ko2").removeClass("active");
-        $("#en, #en2").removeClass("active");
-
-        if (safeLang === "en") {
-            $("#en, #en2").addClass("active");
-        } else {
-            $("#ko, #ko2").addClass("active");
-        }
-    }
-
-    window.SiteLang = {
-        getLang() {
-            return getSavedLang();
-        },
-
-        setLang(lang) {
-            syncLangState(lang);
-
-            const currentLang = this.getLang();
-            this.apply(LANG_DATA.common, ".nav [data-key]", currentLang);
-            this.applyPage(currentLang);
-
-            $(document).trigger("languageChanged", [currentLang]);
-        },
-
-        updateButtons(lang) {
-            syncLangState(lang);
-        },
-
-        apply(langData, selector, lang) {
-            const currentData = langData[lang] || langData.ko;
-
-            $(selector).each(function () {
-                const key = $(this).data("key") || $(this).data("page-key");
-                if (currentData[key]) {
-                    $(this).html(currentData[key]);
-                }
-            });
-        },
-
-        applyPage(lang) {
-            const page = $("body").data("page");
-            if (!page || !LANG_DATA[page]) return;
-
-            this.apply(LANG_DATA[page], "[data-page-key]", lang);
-        }
-    };
 
     function setActiveMenu() {
-        let current = window.location.pathname.split("/").pop();
-
-        if (!current || current === "/") {
-            current = "index.html";
-        }
+        const current = normalizePath(window.location.pathname);
 
         $(".nav li a").removeClass("active");
 
         $(".nav li a").each(function () {
             const link = $(this).attr("href");
-            if (link === current) {
+            if (!link) return;
+
+            const normalizedLink = normalizePath(link);
+
+            if (normalizedLink === current) {
                 $(this).addClass("active");
             }
         });
@@ -108,30 +55,28 @@ $(document).ready(function () {
 
     $("#ko, #ko2").on("click", function (e) {
         e.preventDefault();
-        e.stopPropagation();
         SiteLang.setLang("ko");
     });
 
     $("#en, #en2").on("click", function (e) {
         e.preventDefault();
-        e.stopPropagation();
         SiteLang.setLang("en");
     });
 
-
-    $(".nav").on("click", function (e) {
-        e.stopPropagation();
-    });
-
-    $(".nav li a").on("click", function () {
-        if (isMobile()) {
+    $(".menu-btn").on("click", function () {
+        if ($(this).hasClass("active")) {
             closeMenu();
+        } else {
+            openMenu();
         }
     });
 
+    $(".nav li a").on("click", function () {
+        if (isMobile()) closeMenu();
+    });
 
     $(".top-btn").on("click", function () {
-        $("html, body").animate({ scrollTop: 0 }, 700, "linear");
+        $("html, body").animate({ scrollTop: 0 }, 700);
     });
 
     $(window).on("scroll", function () {
@@ -139,26 +84,13 @@ $(document).ready(function () {
     });
 
     $(window).on("pageshow", function () {
-        const lang = getSavedLang();
-        syncLangState(lang);
-        SiteLang.apply(LANG_DATA.common, ".nav [data-key]", lang);
-        SiteLang.applyPage(lang);
         setActiveMenu();
+        toggleTopButton();
         closeMenu();
-        document.documentElement.classList.add("lang-ready");
     });
 
-    const savedLang = getSavedLang();
-    syncLangState(savedLang);
-    SiteLang.apply(LANG_DATA.common, ".nav [data-key]", savedLang);
-    SiteLang.applyPage(savedLang);
-
+    // 진짜 초기 실행
     setActiveMenu();
-    closeMenu();
     toggleTopButton();
-
-    requestAnimationFrame(function () {
-        document.documentElement.classList.add("lang-ready");
-    });
+    closeMenu();
 });
-

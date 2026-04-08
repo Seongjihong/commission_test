@@ -25,12 +25,6 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-        padding-top: 130px;
-}
-
-main
-{
-    padding: 0;
 }
 
 .icon_price {
@@ -104,13 +98,14 @@ main
     word-break: keep-all;
 }
 
+
 /* =========================
    PAYMENT PROCESS
 ========================= */
 .payment-process {
     margin: 30px auto;
     text-align: center;
-max-width: 1040px;
+    max-width: 1040px;
     padding: 22px 24px;
     border-radius: 26px;
     background: #fbfcfe;
@@ -118,15 +113,13 @@ max-width: 1040px;
 }
 
 .process-title {
-
     font-weight: 700;
     color: #3BA6EA;
     margin-bottom: 6px;
 }
 
 .process-flow {
-
-    font-weight: 600;
+    font-weight: 700;
     color: #333;
     line-height: 1.6;
 }
@@ -135,10 +128,6 @@ max-width: 1040px;
     margin-top: 6px;
     font-size: 18px;
     color: #888;
-}
-
-.process-flow {
-    font-weight: 700;
 }
 
 /* =========================
@@ -328,21 +317,50 @@ max-width: 1040px;
 }
 
 .card-list li {
-    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    word-break: keep-all;
+}
+
+.card-list li {
     max-width: 100%;
     text-align: left;
     font-size: 17px;
     line-height: 1.8;
-    word-break: keep-all;
 }
 
+.list_notice li {
+    position: relative;
+    align-items: flex-start;
+    border-radius: 20px;
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* 카드용 (중앙 정렬 유지) */
 .card-list li::before {
     content: "";
-    position: absolute;
-    left: 0;
-    top: 11px;
-    width: 8px;
-    height: 8px;
+    width: 9px;
+    height: 9px;
+    transform: rotate(45deg);
+    border-radius: 2px;
+    background: #3BA6EA;
+    flex-shrink: 0;
+        margin-top: 10px;
+}
+
+/* 공지용 (위 기준 정렬) */
+.list_notice li::before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    transform: rotate(45deg);
+    border-radius: 2px;
+    background: #3BA6EA;
+    flex-shrink: 0;
+    margin-top: 8px; 
 }
 
 .basic-card .card-list li::before {
@@ -375,8 +393,10 @@ max-width: 1040px;
 }
 
 .list_notice li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
     position: relative;
- align-items: flex-start;
     border-radius: 20px;
     text-align: left;
     font-size: 18px;
@@ -384,26 +404,16 @@ max-width: 1040px;
     word-break: keep-all;
 }
 
-
-.card-list li::before,
-.list_notice li::before{
+.list_notice li::before {
     content: "";
-     position: static;
     width: 9px;
     height: 9px;
     transform: rotate(45deg);
     border-radius: 2px;
-     background: #3BA6EA;
-     flex-shrink: 0;
+    background: #3BA6EA;
+    flex-shrink: 0;
+    margin-top: 8px;
 }
-
-.card-list li,
-.list_notice li {
-    display: flex;
-    align-items: center; /* 핵심: 세로 중앙 */
-    gap: 10px;
-}
-
 
 
 
@@ -1054,7 +1064,7 @@ font-size: 14px;
 
     .process-flow
     {
-        font-size: 18px;
+         font-size: 16px;
     }
 
     .price-hero h1 {
