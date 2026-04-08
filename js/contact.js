@@ -1,25 +1,48 @@
-const CONTACT_TEMPLATE = `1. 방송 닉네임 / 데뷔 플랫폼
+const CONTACT_TEMPLATE = {
+    ko: `1. 방송 닉네임 / 데뷔 플랫폼
 
-2. 신청 내용 / 작업 타입 / 개인세 or 기업세:
+2. 신청 내용 / 작업 타입 / 개인세 or 기업세
 (ex. 일러스트 여캐 전신 / 프리미엄 / 개인세)
 
-3. 캐릭터 외관 설정:
+3. 캐릭터 외관 설정
 (원하시는 디자인을 자세하게 설명해주세요.
 나이, 헤어, 눈매, 눈색, 의상, 소품, 표정, 체형, 필수 악세사리, 필수 색상 등
 이미지 자료를 포함해 작성해주시면 작업에 큰 도움이 됩니다.)
 
-4. 추가 옵션:
+4. 추가 옵션
 (ex. 표정 추가, 손 포즈 추가, 헤어 및 의상 추가, 삼면도 등)
 
-5. 리깅 협업 작가 여부:
+5. 리깅 작가 여부
 (있을 시 작가님의 닉네임 기입, 없을 시 공란으로 비워주세요.)
 
-6. 저작권 구매 여부 / 비공개 여부:
+6. 저작권 구매 여부 / 비공개 여부
 
-7. 요청사항:
+7. 요청사항
 (추가 요청 사항이 있을 시 기입해주세요.)
 
-8. 컨펌을 위한 연락수단 (디스코드, 이메일)`;
+8. 컨펌을 위한 연락수단 (디스코드, 이메일)`,
+
+    en: `1. 방송 닉네임 / 데뷔 플랫폼 (Streamer Name / Debut Platform) : 
+
+2. 신청 내용 / 작업 타입 / 개인세 혹은 기업세 (Request Details / Work Type / Individual or Corporate) : 
+(ex. Full-body Female Illustration / Premium / Independent)
+
+3. 캐릭터 외관 설정 (Character Design & References) :
+(Please describe the design in detail: Age, hair, eyes/color, outfit, props, expression, body type, essential accessories, etc. Reference images are highly recommended.)
+
+4. 추가 옵션 (Additional Options) :
+(ex. Extra expressions, hand poses, outfits, hairstyles, character sheet/three-view drawing)
+
+5. 리깅 작가 여부 (Rigging Artist Information) : 
+(If you have a rigging artist, please provide their name. If not, leave blank.)
+
+6. 저작권 구매 여부 / 비공개 여부 (Copyright Purchase / Privacy Settings) : 
+
+7. 요청사항 (Special Requests) : 
+(Any other specific details or requests.)
+
+8. 컨펌을 위한 연락수단 (디스코드, 이메일) (Contact for Feedback: Discord, Email, etc.) : `
+};
 
 const CONTACT_EMAIL = "csay0108@naver.com";
 
@@ -52,9 +75,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const copyTemplateBtn = document.getElementById("copyTemplateBtn");
     const copyEmailBtn = document.getElementById("copyEmailBtn");
 
+    renderTemplate();
+
     if (copyTemplateBtn) {
         copyTemplateBtn.addEventListener("click", function () {
-            copyToClipboard(CONTACT_TEMPLATE, t("copyTemplateDone"));
+            const lang = getCurrentLang();
+            copyToClipboard(CONTACT_TEMPLATE[lang] || CONTACT_TEMPLATE.ko, t("copyTemplateDone"));
         });
     }
 
@@ -68,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 $(document).on("languageChanged", function () {
+    renderTemplate();
     renderLinkedScheduleInfo();
 });
 
@@ -78,6 +105,14 @@ function getCurrentLang() {
 function t(key) {
     const lang = getCurrentLang();
     return (CONTACT_TEXT[lang] && CONTACT_TEXT[lang][key]) || CONTACT_TEXT.ko[key] || "";
+}
+
+function renderTemplate() {
+    const templatePreview = document.getElementById("templatePreview");
+    if (!templatePreview) return;
+
+    const lang = getCurrentLang();
+    templatePreview.textContent = CONTACT_TEMPLATE[lang] || CONTACT_TEMPLATE.ko;
 }
 
 function renderLinkedScheduleInfo() {
@@ -92,7 +127,6 @@ function renderLinkedScheduleInfo() {
 
     const items = window.getScheduleFormOptions();
 
-    // ✅ closed 포함 (중요)
     const visibleItems = items.filter(function (item) {
         return item.status === "available"
             || item.status === "closing"
@@ -138,9 +172,8 @@ function getStatusText(status) {
 }
 
 function getSlotDiamonds(item) {
-    // ✅ 오픈 예정이면 다이아 숨김
-if (item.status === "upcoming" || item.status === "closed") {
-    return "";
+    if (item.status === "upcoming" || item.status === "closed") {
+        return "";
     }
 
     let html = "";
@@ -170,7 +203,6 @@ function createDiamondGroup(data, type) {
         if (i < booked) {
             diamonds += `<span class="slot-diamond filled ${type}"></span>`;
         } else {
-            // ✅ empty에도 타입 클래스 추가 (중요)
             diamonds += `<span class="slot-diamond empty ${type}"></span>`;
         }
     }

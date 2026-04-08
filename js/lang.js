@@ -91,17 +91,14 @@ window.LANG_DATA = {
         ko: {
             notice_title: "공지사항",
             notice_warning: `※ 공지 미숙지로 인한 문제는 책임지지 않습니다.
-<span class="red">문의 전 공지 사항을 필독해 주세요.</span>`,
-            n1: `모든 작업물의 저작권은 <span class="blue bold">작가 [ 철수 ]</span>에게 있습니다.
-<br><span class="bold">AI 사용 및 무단 사용을 금지</span>합니다.
-<br>저작권 관련 자세한 사용 범위는 하단의 <span class="bold">사용 범위표</span>를 참고해 주세요.`,
-            n2: `<span class="bold">작업 기간은 1주~3주가량 소요</span>됩니다.
-<br>기간은 작업 내용과 컨펌에 따라 유동적으로 달라집니다.`,
-            n3: `<span class="bold">모든 일러스트의 가격은 최소 금액</span>이며,
+<span class="red">문의 전 공지사항을 필독해 주세요.</span>`,
+            n1: `모든 작업물의 저작권은 <span class="blue bold">작가 [ 철수 ]</span> 에게 있습니다.
+<br><span class="bold">AI 사용 및 무단 사용을 금지</span>합니다.<br>저작권 관련 자세한 사용 범위는 하단의 <span class="bold">사용 범위표</span>를 참고해 주세요.`,
+            n2: `<span class="bold">작업 기간은 1주~3주가량 소요</span>됩니다. 기간은 작업 내용과 컨펌에 따라 유동적으로 달라집니다.`,
+            n3: `<span class="bold">모든 일러스트의 가격은 최소 금액</span>이며
 작업 난이도에 따라 <span class="bold">추가금이 발생</span>할 수 있습니다.`,
-            n4: `<span class="bold">예약 슬롯 확정을 위해 총 견적 금액의 10%를 예약금으로 입금</span>해 주셔야하며, 예약금은 신청 취소 시 환불이 불가합니다.`,
-            n5: `견적가 안내 후 <span class="bold">24시간 내에 예약금 미입금 시 슬롯은 자동 취소</span>되며,<br>
-다음 예약자분께 차례가 넘어갑니다.`,
+            n4: `<span class="bold">예약 슬롯 확정을 위해 총 견적 금액의 10%를 예약금으로 입금</span>해 주셔야하며 예약금은 신청 취소 시 환불이 불가합니다.`,
+            n5: `견적가 안내 후 <span class="bold">24시간 내에 예약금 미입금 시 슬롯은 자동 취소</span>되며 다음 예약자분께 차례가 넘어갑니다.`,
             n6: `모든 작업물은 <span class="bold">작가의 포트폴리오로 사용되며 작업 완료일 이후 공개</span>됩니다.`,
             n7: `불가능하다고 판단되는 작업은 거절될 수 있습니다.`,
             t_c: `사용 범위`,
@@ -274,6 +271,10 @@ and will be <span class="bold">published after the completion date.</span>`,
 
             opt_14: "삼면도 추가 (단색)",
             opt_14_price: "200,000원",
+
+                 contact_flow_title: "전체 결제 진행 순서",
+            contact_flow_desc: "예약금 10% 입금 ▶ 작업 시작 전 40% 입금 ▶ 작업 완료 후 50% 입금",
+            contact_flow_sub: "(완성된 파일은 전액 입금 완료 후 전달드립니다.)",
         },
 
         en: {
@@ -297,7 +298,7 @@ and will be <span class="bold">published after the completion date.</span>`,
             expression_title: "Expressions",
 
             expression_desc_1: `Blush / Heart Eyes / Sparkle / Straight Face / Tears are included by default.`,
-            expression_desc_2: "Tongue Out / Puffy Cheeks are included with the <b>VBridger option.</b>",
+            expression_desc_2: "Tongue Out / Puffy Cheeks are included with the VBridger option.",
             expression_desc_3: "Custom expressions can also be requested.",
 
             expression_1: "Blush",
@@ -392,7 +393,9 @@ and will be <span class="bold">published after the completion date.</span>`,
             opt_14: "3-View Sheet (Flat)",
             opt_14_price: "KRW 200,000",
 
-            
+             contact_flow_title: "The payment process is as follows:",
+            contact_flow_desc: "10% deposit ▶ 40% before work ▶ 50% after completion",
+            contact_flow_sub: "(The final files will be delivered once the full payment has been settled.)"
         }
     },
 
@@ -464,7 +467,7 @@ and will be <span class="bold">published after the completion date.</span>`,
             contact_flow_desc: "예약금 10% 입금 ▶ 작업 시작 전 40% 입금 ▶ 작업 완료 후 50% 입금",
             contact_flow_sub: "(완성된 파일은 전액 입금 완료 후 전달드립니다.)",
 
-            contact_template_title: "복사되는 신청 양식",
+            contact_template_title: "신청 양식",
             contact_copy_template: "신청 양식 복사하기",
             contact_copy_email: "메일주소 복사하기",
 

@@ -5,7 +5,7 @@
 ========================= */
 .notice-page {
     width: 100%;
-    padding-top: 120px;
+    padding-top: 130px;
 }
 
 .notice-section {
@@ -128,38 +128,99 @@
     margin-bottom: 42px;
 }
 
+/* =========================
+   NOTICE LIST (다이아몬드)
+========================= */
 .list_notice {
-    width: 100%;
-    max-width: 960px;
-    margin: 0 auto;
+    padding: 18px;
+    border-radius: 32px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(185, 214, 234, 0.72);
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
     display: flex;
     flex-direction: column;
-    gap: 16px;
 }
-
 .list_notice li {
     position: relative;
-    padding: 24px 26px 24px 62px;
-    border-radius: 24px;
-    background: rgba(255, 255, 255, 0.94);
-    border: 1px solid #dbe8f2;
-    box-shadow: 0 14px 34px rgba(19, 57, 88, 0.06);
-    font-size: 18px;
-    line-height: 1.8;
-    text-align: left;
-    color: #3d4b58;
+    padding: 20px 20px 20px 60px;
+    font-size: 16px;
+    line-height: 1.9;
+    color: var(--text);
     word-break: keep-all;
 }
 
-.list_notice li::before {
-    content: "";
-    position: absolute;
-    left: 24px;
-    top: 28px;
-    width: 22px;
-    height: 22px;
-    background: url(../img/list_icon.svg?v=1) no-repeat center / contain;
+/* 줄 구분 (고급 느낌 핵심) */
+.list_notice li + li {
+    border-top: 1px solid rgba(219, 231, 241, 0.8);
 }
+
+
+/* 아이콘 */
+.list_notice li::before {
+    content: "!";
+    position: absolute;
+    top: 22px;
+    left: 18px;
+
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #eef8fe;
+    border: 1px solid #d4ebfa;
+
+    color: var(--sky-deep);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+
+@media (max-width: 1024px) {
+    .list_notice {
+        border-radius: 26px;
+    }
+
+    .list_notice li {
+        padding: 18px 20px 18px 58px;
+        font-size: 14px;
+        line-height: 1.85;
+    }
+
+    .list_notice li::before {
+        top: 20px;
+        left: 18px;
+        width: 26px;
+        height: 26px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .list_notice {
+        border-radius: 22px;
+    }
+
+    .list_notice li {
+        padding: 16px 16px 16px 52px;
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .list_notice li::before {
+        top: 18px;
+        left: 16px;
+        width: 24px;
+        height: 24px;
+        font-size: 11px;
+    }
+}
+
 
 /* =========================
    NOTICE TABLE
@@ -214,6 +275,7 @@
     background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
     box-shadow: 0 18px 42px rgba(0, 0, 0, 0.06);
     border: 1px solid #dce8f1;
+    border-top: none;
     -webkit-overflow-scrolling: touch;
 }
 
@@ -283,13 +345,7 @@
     border-right: 1px solid #e3edf4;
 }
 
-.t1 tbody tr:nth-child(even) td {
-    background: #f9fcff;
-}
 
-.t1 tbody tr:nth-child(even) th {
-    background: #edf6fb;
-}
 
 .t1 th:last-child,
 .t1 td:last-child {
@@ -299,6 +355,7 @@
 
 
 .t1 tbody tr:hover td {
+    font-weight: 700;
     background: #f1f8fd;
 }
 
@@ -313,7 +370,7 @@
 .t_text {
     margin-top: 14px;
     text-align: right;
-    font-size: 14px;
+    font-size: 18px;
     color: #666;
     line-height: 1.6;
 }
@@ -381,7 +438,6 @@
    MOBILE
 ========================= */
 @media (max-width: 768px) {
-@media (max-width: 768px) {
     .notice-page {
         padding-top: 100px;
     }
@@ -423,19 +479,7 @@
         margin-bottom: 28px;
     }
 
-    .list_notice li {
-        padding: 18px 18px 18px 50px;
-        border-radius: 18px;
-        font-size: 15px;
-        line-height: 1.7;
-    }
 
-    .list_notice li::before {
-        left: 18px;
-        top: 22px;
-        width: 18px;
-        height: 18px;
-    }
 
     .notice-table {
         max-width: 100%;
@@ -508,7 +552,7 @@ html[data-lang="en"] .t1 td {
 
     .t_text {
         margin-top: 10px;
-        font-size: 12px;
+        font-size: 14px;
         text-align: center;
     }
 
@@ -517,5 +561,4 @@ html[data-lang="en"] .t1 td {
         min-height: 54px;
         font-size: 16px;
     }
-}
 }

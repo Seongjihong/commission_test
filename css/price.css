@@ -105,6 +105,43 @@ main
 }
 
 /* =========================
+   PAYMENT PROCESS
+========================= */
+.payment-process {
+    margin: 30px auto;
+    text-align: center;
+max-width: 1040px;
+    padding: 22px 24px;
+    border-radius: 26px;
+    background: #fbfcfe;
+    border: 1px solid #edf2f7;
+}
+
+.process-title {
+
+    font-weight: 700;
+    color: #3BA6EA;
+    margin-bottom: 6px;
+}
+
+.process-flow {
+
+    font-weight: 600;
+    color: #333;
+    line-height: 1.6;
+}
+
+.process-note {
+    margin-top: 6px;
+    font-size: 18px;
+    color: #888;
+}
+
+.process-flow {
+    font-weight: 700;
+}
+
+/* =========================
    SECTION COMMON
 ========================= */
 .side-target {
@@ -196,14 +233,13 @@ main
 }
 
 .card-title {
-    width: auto;
+    width: 100%;
     padding: 8px 18px;
     margin-bottom: 18px;
     border-radius: 999px;
     background: #ffffff;
     font-size: 26px;
     font-weight: 700;
-    box-shadow: 0 8px 18px rgba(19, 57, 88, 0.08);
 }
 
 .blue_t {
@@ -213,6 +249,7 @@ main
 .pink_t {
     color: #a13f68;
 }
+
 
 .card-price {
     margin-bottom: 14px;
@@ -230,10 +267,34 @@ main
 }
 
 .card-desc {
+    width: 100%;
     margin-bottom: 18px;
-    font-size: 18px;
-    line-height: 1.75;
+    padding: 16px 18px;
+    border-radius: 22px;
+    background: rgba(247, 251, 255, 0.96);
+    border: 1px solid rgba(219, 231, 241, 0.95);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.8;
     word-break: keep-all;
+}
+
+
+
+.premium-card .card-desc {
+    background: rgba(255, 248, 251, 0.96);
+    border-color: rgba(239, 212, 223, 0.95);
+}
+
+.plus {
+    display: inline-block;
+    margin: 0 4px;
+    color: var(--sky-deep);
+    font-weight: 800;
+}
+
+.premium-card .plus {
+    color: #c97f99;
 }
 
 .blue_p {
@@ -252,11 +313,6 @@ main
     color: #bb2b62;
 }
 
-.plus {
-    display: inline;
-    margin: 0 4px;
-    font-weight: 700;
-}
 
 .mobile-break {
     display: inline;
@@ -274,7 +330,6 @@ main
 .card-list li {
     position: relative;
     max-width: 100%;
-    padding-left: 22px;
     text-align: left;
     font-size: 17px;
     line-height: 1.8;
@@ -288,7 +343,6 @@ main
     top: 11px;
     width: 8px;
     height: 8px;
-    border-radius: 50%;
 }
 
 .basic-card .card-list li::before {
@@ -303,40 +357,57 @@ main
    NOTICE STYLE TEXT BLOCK
 ========================= */
 .expression-text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 18px 0 26px;
+    max-width: 1040px;
+    margin: auto;
+    margin-top: 30px;
+    padding: 22px 24px;
+    border-radius: 26px;
+      background: #fbfcfe;
+    border: 1px solid #edf2f7;
 }
 
+
 .list_notice {
-    width: 100%;
-    max-width: 980px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: 500;
 }
 
 .list_notice li {
     position: relative;
-    margin: 8px 0;
-    padding: 18px 18px 18px 48px;
+ align-items: flex-start;
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.92);
-    border: 1px solid #dbe8f2;
-    box-shadow: 0 14px 30px rgba(19, 57, 88, 0.05);
     text-align: left;
     font-size: 18px;
-    line-height: 1.75;
+    line-height: 1.5;
     word-break: keep-all;
 }
 
-.list_notice li::before {
+
+.card-list li::before,
+.list_notice li::before{
     content: "";
-    position: absolute;
-    left: 18px;
-    top: 22px;
-    width: 16px;
-    height: 16px;
-    background: url(../img/list_icon.svg?v=1) no-repeat center / contain;
+     position: static;
+    width: 9px;
+    height: 9px;
+    transform: rotate(45deg);
+    border-radius: 2px;
+     background: #3BA6EA;
+     flex-shrink: 0;
 }
+
+.card-list li,
+.list_notice li {
+    display: flex;
+    align-items: center; /* 핵심: 세로 중앙 */
+    gap: 10px;
+}
+
+
+
+
+
 
 /* =========================
    EXPRESSION SECTION
@@ -344,11 +415,12 @@ main
 .expression-list {
     width: 100%;
     display: grid;
+     max-width: 1040px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
     padding: 30px 0 0;
-    margin: 0;
-    list-style: none;
+    margin: 0 auto;
+
 }
 
 .expression-item {
@@ -664,35 +736,139 @@ main
 
 
 /* =========================
-   REFUND SECTION
+   REFUND
 ========================= */
-.refund-section {
+.refund-section .section-head h2 {
+    border-color: rgba(255, 145, 145, 0.28);
+    color: #c45a5a;
+    background: rgba(255, 250, 250, 0.95);
+    
+}
+
+.refund-section .inner {
+    position: relative;
+}
+
+.refund-box {
+    border-radius: 34px;
+    background: linear-gradient(180deg, rgba(255, 250, 250, 0.98) 0%, rgba(255, 255, 255, 0.98) 100%);
+    border: 1px solid rgba(239, 203, 203, 0.95);
+    box-shadow: 0 18px 34px rgba(195, 108, 108, 0.12);
+    padding: 30px 26px 26px;
+}
+
+.refund-alert {
     display: flex;
     align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    padding: 14px 18px;
+    border-radius: 18px;
+    background: #fff1f1;
+    border: 1px solid #f2caca;
+    color: #a94d4d;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.6;
+}
+
+.refund-alert::before {
+    content: "!";
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 999px;
+    background: #e96c6c;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 800;
+    flex: 0 0 auto;
 }
 
 .refund-list {
-    width: 100%;
-    max-width: 900px;
     display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    gap: 16px;
-    padding: 0;
-    font-size: 18px;
-        margin: 0 auto;
-
+    grid-template-columns: 1fr;
+    gap: 14px;
 }
 
 .refund-list li {
-    padding: 20px 18px;
+    position: relative;
+    font-weight: 600;
     border-radius: 22px;
-    background: rgba(255, 255, 255, 0.94);
-    border: 1px solid #dbe8f2;
-    box-shadow: 0 14px 30px rgba(19, 57, 88, 0.06);
-    text-align: center;
-    line-height: 1.7;
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
     word-break: keep-all;
+}
+
+
+.refund-list li.important {
+    background: linear-gradient(180deg, rgba(255, 245, 245, 0.98) 0%, rgba(255, 250, 250, 0.98) 100%);
+    border: 1px solid rgba(239, 203, 203, 0.95);
+    box-shadow: 0 12px 24px rgba(195, 108, 108, 0.1);
+    color: #8f4040;
+}
+
+.refund-list li.important::before {
+    background: #e47b7b;
+    box-shadow: 0 0 0 6px rgba(228, 123, 123, 0.18);
+}
+
+.refund-list li:nth-child(4),.refund-list li:nth-child(6) {
+    color: #c45a5a;
+}
+
+.refund-note-box {
+    max-width: 1040px;
+    margin: 0 auto;
+    margin-top: 8px;
+    padding: 22px 24px;
+    border-radius: 26px;
+    background: rgba(255, 250, 245, 0.92);
+    border: 1px solid rgba(255, 210, 180, 0.5);
+}
+
+/* =========================
+   REFUND LIST
+========================= */
+.refund-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* 기본 */
+.refund-list li {
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.refund-list li::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    transform: rotate(45deg);
+    border-radius: 2px;
+    background: #d77a4c;
+
+    flex: 0 0 auto;
+}
+
+.refund-list li:nth-child(4)::before,
+.refund-list li:nth-child(6)::before {
+    background: #d9534f;
+}
+
+/* 강조 다이아 */
+.refund-list li:nth-child(4)::before,
+.refund-list li:nth-child(6)::before {
+    background: #d9534f;
 }
 
 /* =========================
@@ -738,118 +914,84 @@ main
 /* =========================
    FLOATING NAV
 ========================= */
+/* =========================
+   FLOATING SIDE NAV
+========================= */
 .floating-nav {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(calc(660px + 24px), -50%);
-    z-index: 1200;
+    right: max(18px, calc((100vw - 1320px) / 2 - 70px));
+    bottom: 32px;
+    z-index: 950;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 10px;
 }
 
-@media (max-width: 1400px) {
-    .floating-nav {
-        left: auto;
-        right: 18px;
-        transform: translateY(-50%);
-    }
+.side-nav-top,
+.top-btn {
+    width: 54px;
+    height: 54px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(185, 214, 234, 0.82);
+    box-shadow: 0 12px 24px rgba(59, 166, 234, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: relative;
+}
+
+.side-nav-top::before,
+.top-btn::before {
+    content: "";
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    border-top: 2px solid var(--sky-deep);
+    border-left: 2px solid var(--sky-deep);
+    transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .side-nav {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 8px;
+    padding: 10px 8px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(185, 214, 234, 0.72);
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.side-nav button,
+.side-nav a {
+    display: inline-flex;
     align-items: center;
-    
-}
-
-.side-nav-dot {
-    position: relative;
-    width: 16px;
-    height: 16px;
-    padding: 0;
-    border: none;
-    border-radius: 50%;
-    background: rgba(59, 166, 234, 0.35);
-    cursor: pointer;
-      overflow: visible;
-}
-
-.side-nav-dot.active {
-    background: #3BA6EA;
-}
-
-.side-nav-tooltip {
-    position: absolute;
-    top: 50%;
-    right: 28px;
-    transform: translateY(-50%);
-    padding: 8px 14px;
+    justify-content: center;
+    min-height: 40px;
+    min-width: 40px;
+    padding: 0 12px;
     border-radius: 999px;
-    background: #3BA6EA;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 700;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    letter-spacing: 1px;
-
+    color: var(--text-soft);
+    font-size: 13px;
+    font-weight: 800;
+    background: transparent;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
-.side-nav-tooltip::after {
-    content: "";
-    position: absolute;
-    right: -10px;
-    top: 50%;
-    transform: translateY(-50%);
-    border-width: 6px;
-    border-style: solid;
-    border-color: transparent transparent transparent #3BA6EA;
+.side-nav button:hover,
+.side-nav a:hover,
+.side-nav button.active,
+.side-nav a.active {
+    background: #eef8fe;
+    color: var(--sky-deep);
+    transform: translateY(-1px);
 }
 
-.side-nav-top {
-    position: relative;
-    width: 54px;
-    height: 54px;
-    background: rgba(255, 255, 255, 0.96);
-    border: 1px solid rgba(59, 166, 234, 0.2);
-    border-radius: 50%;
-    box-shadow: 0 1px 10px rgba(19, 57, 88, 0.12);
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.side-nav-top::before {
-    display: none;
-}
-
-.side-nav-top::after {
-    content: "";
-    width: 14px;
-    height: 14px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    border-top: 3px solid #3BA6EA;
-    border-right: 3px solid #3BA6EA;
-    transform: translate(-50%, -30%) rotate(-45deg);
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .side-nav-dot:hover {
-        transform: scale(1.1);
-        background: #3BA6EA;
-    }
-
-    .side-nav-dot:hover .side-nav-tooltip {
-        opacity: 1;
-        visibility: visible;
-    }
-}
 
 /* =========================
    TABLET
@@ -906,7 +1048,14 @@ main
         padding-top: 100px;
     }
 
+    .process-note {
+font-size: 14px;
+}
 
+    .process-flow
+    {
+        font-size: 18px;
+    }
 
     .price-hero h1 {
         font-size: 32px;
@@ -935,14 +1084,17 @@ main
         gap: 20px;
         padding: 22px 18px;
         border-radius: 24px;
+        align-items: center;
     }
 
     .card-title {
         font-size: 22px;
+        text-align: center;
     }
 
     .card-price {
         font-size: 24px;
+        
     }
 
     .card-desc,
@@ -1052,31 +1204,19 @@ max-width: 720px;
 }
 
 .extra-option-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
     gap: 22px 24px;
-    align-items: start;
+    align-items: center;
+        justify-content: center;
 }
 
 .extra-option-group {
-    padding: 18px;
+    padding: 20px;
+    width: 39%;
     border-radius: 24px;
     background: rgba(255, 255, 255, 0.92);
-    border: 1px solid #e5d8df;
+        border: 1px solid #d9e9f8;
     box-shadow: 0 14px 28px rgba(19, 57, 88, 0.05);
-}
-
-.extra-option-group__title {
-    display: inline-flex;
-    align-items: center;
-    min-height: 32px;
-    padding: 0 14px;
-    margin-bottom: 14px;
-    border-radius: 999px;
-    background: #f7e8ef;
-    color: #b05b80;
-    font-size: 14px;
-    font-weight: 700;
 }
 
 .extra-option-list {
@@ -1103,35 +1243,66 @@ max-width: 720px;
     flex: 0 0 auto;
     transform: rotate(45deg);
     border-radius: 2px;
-    background: #cf6f98;
+    background: #CF6F98;
 }
 
 .extra-option-name {
     flex: 1 1 auto;
     min-width: 0;
-    color: #2d3340;
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 1.4;
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
     word-break: keep-all;
 }
 
 .extra-option-price {
     flex: 0 0 auto;
     margin-left: 8px;
-    color: #cf6f98;
+    color: #CF6F98;
     font-size: 15px;
     font-weight: 800;
     white-space: nowrap;
 }
 
-@media (max-width: 1024px) {
-    .extra-option-grid {
-        grid-template-columns: 1fr;
-    }
+.list_notice,
+.refund-list
+ {
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+.price-guide-text
+{
+    margin: 30px auto;
 }
 
 @media (max-width: 768px) {
+
+    .payment-process
+    {
+        margin: 0 20px;
+    }
+    
+
+.refund-list li 
+{
+    padding: 0 10px;
+}
+
+.price-hero .inner
+{
+    padding: 0;
+}
+
+.expression-text
+{
+    width: 100%;
+}
+      .extra-option-grid {
+    flex-direction: column;
+    gap: 16px;
+  }
     .extra-option-section {
         margin-top: 26px;
         padding: 0 20px;
@@ -1156,4 +1327,9 @@ max-width: 720px;
     .extra-option-price {
         font-size: 14px;
     }
+     .extra-option-group {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
 }
